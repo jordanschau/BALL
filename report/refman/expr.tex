@@ -1,0 +1,265 @@
+
+\section{Expressions}
+A BALL expression is evaluated in a predefined hierarchy and returns a
+single value. An expression can return a value of any type. The
+precedence of the operators when evaluating an expression is the same
+as the order they are explained in this section, with highest
+precedence first. The associativity of the operators will be explained
+in each section. The order in which operands are evaluated is
+undefined, even when the expressions have side effects.
+
+\subsection{Atomic Expressions}
+\begin{verbatim}
+atom_expression : 
+    STRING
+    | IDENTIFIER
+    | NUMBER
+    | "(" expression ")"
+    | list_initializer
+    | "item"
+    ;
+list_initializer : "[" variable_list "]"
+                 | type "[" "]"
+                 ;
+variable_list : expression
+              | variable_list "," expression
+              ;
+\end{verbatim} 
+
+An atomic expression is an identifier, constant, list initializer, or
+an expression in parentheses. Identifiers will return the value of the
+variable bound to the identifier. If there is no binding with respect
+to that identifier, the compiler should display an error.
+
+Anonymous lists are specified as a sequence of expressions (separated
+by commas) inside square brackets. Each expression must evaluate to
+the same type, and the type of the newly created list will be set to a
+list that contains instances of that common type. The compiler should
+report an error if it cannot derive a common type. If the new list is
+an empty list, having no expressions means the new object cannot
+derive its type. Therefore, the type needs to be explicitly written by
+the user.
+
+{\tt item} is a special keyword used by a {\tt where} expression. It
+acts as a variable holding the element of the list being filtered that
+is currently being checked. It can only be written in the expression
+argument of {\tt where}. The compiler should throw an error if {\tt
+  item} is detected anywhere other than a {\tt where} expression. For
+more information, see section \ref{ref_expr_where}.
+
+\subsection{Primary Expressions}
+\begin{verbatim}
+primary_expression : atom_expression
+                   | function_call
+;
+function_call : IDENTIFIER "(" ")"
+              | IDENTIFIER "(" argument_list ")"
+;
+argument_list : expression
+              | argument_list "," expression
+;
+\end{verbatim} 
+
+A primary expression is either an atomic expression or a function
+call. Arguments are expressions specified inside a list separated by
+commas and delimited by parentheses.  Functions can only be referenced
+by identifiers. BALL does not support storing functions inside
+constructs such as lists, and thus functions can only be referenced
+through their name that exists in the global scope. In addition,
+function names cannot be overloaded.
+
+\subsection{Postfix Expressions}
+Postfix expressions are left-associative.
+\begin{verbatim}
+postfix_expression : primary_expression
+                   | postfix_expression "'s" identifier
+                   | postfix_expression "where" "(" expression ")"
+                   | postfix_expression "++"
+                   | postfix_expression "--"
+                   ;
+\end{verbatim}
+
+\subsubsection{Attribute Calling}
+The \texttt{'s} accessor operator acts much like the period
+(\texttt{.}) character in Java. The left operand of the \texttt{'s}
+evaluates to either a \texttt{team} or \texttt{player} object. The
+right operand is an identifier that represents the name of a {\tt
+  stat} or attribute associated with the value of the left
+operand. For example:
+\begin{verbatim}
+    number teamwins = Orioles's W;
+\end{verbatim}
+Assuming \texttt{Orioles} is a loaded team, and since \texttt{W} is a
+built-in stat, this program successfully compiles and stores the value
+of the Orioles' wins into \texttt{teamwins}.
+
+\subsubsection{\texttt{where} Expression}\label{ref_expr_where}
+\texttt{where} is used to filter lists. The left side evaluates to a
+list. The right side is a boolean expression. Each element of the left
+side is tested with the boolean expression. If and only if the boolean
+expression returns true on the element, the element will be inside the
+filtered and returned list. To reference the element being checked
+inside the boolean expression, use the \texttt{item} keyword. For
+example:
+
+\begin{verbatim}
+    list of player 200hitters = Reds's PLAYERS 
+        where (item's AVG > .200);
+\end{verbatim}
+
+The initial list on which the filtering will take place is the list
+\texttt{Reds's PLAYERS}, assuming that \texttt{Reds} is a team that
+has been loaded. The final, filtered list, will be stored in the list
+\texttt{200hitters}, and will contain only the players from the first
+list who fit the requirement of having an AVG over .200.
+
+\subsubsection{Postfix Operators}
+The postfix operators \texttt{++} and \texttt{----} behave identically with C and Java's increment/decrement operators, as long as the left-hand side is a name of a \texttt{number} variable. The variable's value will be returned before it is incremented/decremented. \texttt{++} increments the variable and \texttt{----} decrements the variable.
+
+\subsection{Unary Expressions}
+\begin{verbatim}
+unary_expression : postfix_expression
+                 | "++" unary_expression
+                 | "--" unary_expression
+                 | primary_expression "from" unary_expression
+                 | "any" unary_expression
+                 ;
+\end{verbatim}
+Unary expressions are evaluated right to left (right-associative).
+
+\subsubsection{Prefix Operators}
+The prefix operators \texttt{++} and \texttt{----} behave identically with C and Java's increment/decrement operators, as long as the left-hand side is a name of a \texttt{number} variable. The variable's value will be returned after it is incremented/decremented. \texttt{++} increments the variable and \texttt{----} decrements the variable.
+
+\subsubsection{\texttt{from} Expression}
+\texttt{from} is a matcher operation. The right operand is a
+\texttt{list}, and the left operand is any object. The first element
+of the right operand that "matches" the left operand will be
+returned. If the elements are \texttt{player} objects, matching is
+defined as an equivalent \texttt{name} or equivalent \texttt{player}
+object. For everything else, matching is defined as being the same
+object, equivalent to the \texttt{is} keyword. [See \ref{ref_expr_comp}.]
+
+However, what should \texttt{from} return when it cannot match the
+left hand side with any element in the right hand side? The return
+value, when used as the argument for the builtin function
+\texttt{isValid}, must return a \texttt{false} value. The exact value
+itself is implementation dependent.
+
+\subsubsection{\texttt{any} Expression}
+The right operand of \texttt{any} is a \texttt{list}. The expression returns one random element from the \texttt{list}.
+
+\subsection{Multiplicative Operations}\label{multiplication}
+\begin{verbatim}
+multiplication_expression : 
+        unary_expression
+        | multiplication_expression "*" unary_expression
+        | multiplication_expression "/" unary_expression
+        | multiplication_expression "%" unary_expression
+        ;
+\end{verbatim}
+
+All multiplicative operators are left-associative. The order in which the operands are evaluated (left first or right first) implementation dependent. The operand expressions must have type \texttt{number}. The result of the operator \texttt{*} is the product of the two operands. If an implementation implicitly stores numbers as both integers and floating point numbers, both operands must be converted to floating point if one of the operands has a floating-point internal type.
+The result of the operator \texttt{/} is the division between the two operands. Result of division by zero is implementation-defined. Rules on conversion of the two operand types are identical with the \texttt{*} operator.
+The operator \texttt{\%} returns the modulo of the two numbers. Rules of the division operator apply here as well.
+
+\subsection{Addition Operations}\label{ref_expr_addition}
+\begin{verbatim}
+addition_expression : 
+        multiplication_expression
+        | addition_expression "+" multiplication_expression
+        | addition_expression "-" multiplication_expression
+        ;
+\end{verbatim}
+
+Both addition and subtraction operators are left-associative. The order in which the operands are evaluated is implementation dependent. The operand expressions for \texttt{-} must evaluate to type \texttt{number}. The operand expressions for \texttt{+} must evaluate to and behaves as shown in table \ref{plusstuff}.
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|p{7cm}|}
+\hline
+Left Type & Right Type & Result\\
+\hline
+\texttt{number} & \texttt{number} & The two \texttt{number}s are added together.\\
+\texttt{list of T} & \texttt{list of T} & The right \texttt{list} is appended to the left, into a new \texttt{list}.\\
+\texttt{string} & any object & The string representation of the right is concatenated to the left.\\
+any object & \texttt{string} & The right is concatenated to the string representation of the left.\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Operand Evaluation and Behavior for \texttt{+}.}\label{plusstuff}
+\end{table}%
+
+
+
+Rules for internal conversion for numeric operand values are identical to the multiplication operator in section \ref{multiplication}. 
+\texttt{-} returns the subtraction between the two operands. Rules for internal conversion for the operand values are identical to the addition operator.
+
+\subsection{Comparison Expressions}\label{ref_expr_comp}
+\begin{verbatim}
+comparison_expression : 
+        addition_expression
+        | comparison_expression "is" addition_expression
+        | comparison_expression "isnot" addition_expression
+        | comparison_expression ">" addition_expression
+        | comparison_expression "<" addition_expression
+        | comparison_expression ">=" addition_expression
+        | comparison_expression "<=" addition_expression
+;
+\end{verbatim}
+
+Evaluation between a series of comparison operations is done from left
+to right (all comparison operators are left-associative).  Comparison
+operators can only compare two values of the same type.  The equality
+operator \texttt{is} has behavior detailed in table in table
+\ref{isbehavior}. The inequality operator \texttt{isnot} returns true
+when \texttt{is} returns false and vice versa. The rest of the
+comparison operators only work on numbers.
+
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|p{8cm}|}
+\hline
+Type & Returns true only if\\
+\hline
+\texttt{number} & The two numbers are equal\\
+\texttt{string} & The strings are equal (case sensitive)\\
+anything else & Both refer to the same object in memory\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Behavior of \texttt{is}.}\label{isbehavior}
+\end{table}
+
+For operators other than {\tt is} or {\tt isnot}, both operands need
+to be {\tt number}s. Their behavior is that of Java's {\tt <}, {\tt
+  <=}, {\tt >} and {\tt >=} operators when applied on two
+floating-point numbers.
+
+\subsection{Logical Expressions}
+\begin{verbatim}
+logical_not_expression : 
+        comparison_expression
+        | "not" logical_not_expression
+        ;
+logical_and_expression : 
+        logical_not_expression
+        | logical_and_expression "and" logical_not_expression
+        ;
+logical_or_expression : 
+        logical_and_expression
+        | logical_or_expression "or" logical_and_expression
+        ;
+\end{verbatim}
+
+Logical expressions are ordered, with decreasing precedence, as NOT, AND, and OR expressions. Each of these expressions take operands of type \texttt{number} and returns the truth value of the expression.
+
+
+\texttt{not} takes a single expression and returns \texttt{false} if the original expression is \texttt{true} and \texttt{true} if the original expression is \texttt{false}.
+\texttt{and} takes two expressions and returns \texttt{true} if both expressions return \texttt{true}, \texttt{false} otherwise. \texttt{or} takes two expressions and returns \texttt{false} if both expressions return \texttt{false}, \texttt{true} otherwise.
+
+
+The logical \texttt{or} expression is the expression with the lowest precedence, and is made of terms of expressions with higher precedence. An \texttt{expression} proper is a logical \texttt{or} expression.
+
+\begin{verbatim}
+expression : logical_or_expression
+           ;
+\end{verbatim}

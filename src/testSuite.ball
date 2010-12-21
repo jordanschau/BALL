@@ -1,0 +1,219 @@
+/*
+ *	Test Suite
+ *	The Following will server
+ *	as a regression test suite
+ *	furthermore, it will be a simulation function
+ *	
+ *  Let the Regression Testing Begin!
+ * 	PLAYBALL!
+ *
+ */
+ 
+print "Game On";
+
+team yankees = load("yankees.team");
+team padres = load("padres.team");
+team giants = load("giants.team");
+team bluejays = load("blue jays.team");
+
+team astros = load("astros.team");
+team nationals = load("nationals.team");
+
+player aroid = "Alex Rodriguez" from yankees's BATTERS;
+
+if (not isValid("and" from string[])) then:
+	print "NECTAR";
+end
+
+/*** FOR PITCHERS ***/
+stat pWalk = BB / BF;
+stat pDouble = H * .174 / BF;
+stat pTriple = H * .024 / BF;
+stat pHR = HR / BF;
+stat pSingle = (H / BF) - pHR - pTriple - pDouble;
+stat pHit = H / (IP * 6);	//magic stat
+
+/*Batter probabilities*/ 
+stat AVG = H / AB;     // Creates a new AVG stat
+
+list of team teams = [yankees, padres, giants, bluejays];
+
+number x = 1;
+/*
+ *	simple foreach loop
+ *  tests loop, print, escape chars
+ * 	postfix unary and prefix;
+ */
+foreach t in teams:
+	print x++ + ".\t" + t's teamname + "\t" + t's W + " wins";
+	--x;
+	//x++;
+	++x;
+end
+
+/*
+ *	Function takes a list of teams
+ *	Returns top players in all teams
+ *  Based on most hits
+ */
+function bestHitters(list of team team1, number top) returns list of player:
+	
+	//player nully = any yankees's BATTERS; //because we love the yankees!
+	
+	list of player allPlayers = player[];
+	
+	foreach i in team1:
+		allPlayers = allPlayers + i's BATTERS;
+	end  
+	
+	return topPlayers(top, allPlayers, H);
+end
+
+/*
+number j = 0;
+print "\nALL STAR TEAM:";
+foreach p in bestHitters(teams, 40):
+	print ++j +".\t" + p's name+ "\t\tHits: "+ p's H;
+end
+*/
+
+simfunction pitcherSim is:
+	list of player team1Pitchers = team1's PITCHERS; 
+	list of player team2Pitchers = team2's PITCHERS;
+	
+	number team1Points = 0;
+	number team2Points = 0;
+	
+	stat ERA = (ER / IP) * 9;
+	
+	foreach p in team1Pitchers where(item's ERA < 5.0):
+		player temp = any bestHitters(teams, 20);
+		if(p's pHit < temp's AVG) then:
+			//print p's pHit + "\t\t" + temp's AVG;
+			team1Points++;
+		end
+	end
+	
+	foreach p in team2Pitchers where(item's ERA < 5.0):
+		player temp = any bestHitters(teams, 20);
+		if(p's pHit < temp's AVG) then:
+			//print p's pHit + "\t\t" + temp's AVG;
+			team2Points++;
+		end
+	end
+	
+	
+	if (team1Points > team2Points) then:
+		return team1;
+	else:
+		if (team1Points < team2Points and (team1Points isnot team2Points)) then:
+			return team2;
+		else:
+			//print "TIE so we chose: ";
+			if(rand(0, 1) > .5 ) then:
+				//print team1's teamname;
+				return team1;
+			else:
+				//print team2's teamname;
+				return team2;
+			end
+		end
+	end
+end
+
+
+simfunction anotherSim is:
+	
+	number team1P = 0;
+	number team2P = 0;
+	
+	number team1B = 0;
+	number team2B = 0;
+	
+	foreach p in team1's BATTERS:
+		team1P = p's AB + p's R + p's H + p's 2B + p's 3B + p's HR + p's BB;
+	end
+
+	foreach p in team2's BATTERS:
+		team2P -= p's AB + p's R + p's H + p's 2B + p's 3B + p's HR + p's BB;
+	end
+		
+	foreach p in team1's PITCHERS:
+		team1B -= p's IP + p's H + p's ER + p's HR + p's BB + p's K + p's BF;
+	end
+		
+	foreach p in team2's PITCHERS:
+		team2B -= p's IP + p's H + p's ER + p's HR + p's BB + p's K + p's BF;
+	end
+	
+
+	list of player bestBatters = bestHitters([team1,team2],5);	
+	
+	foreach p in bestBatters:
+		foreach q in team1's BATTERS:
+			if (p is q) then:
+				team1B /= 2;
+			end	
+		end
+	end
+	
+	foreach p in bestBatters:
+		foreach q in team2's BATTERS:
+			if (p is q) then:
+				team2B /= 2;
+			end	
+		end
+	end 
+	
+	number useless = 0;
+	do:
+		useless++;
+		if (useless >= 10 or (useless % 9 is 8)) then:
+			stopdo;
+	 	end
+	end
+	 
+	if ((rand(0,1)*(team1B + team1P)) > (rand(0,1)*(team2B + team2P)) ) then:
+		//print (team1B + team1P);
+		return team1;
+	else:
+		return team2;
+	end
+end
+
+activate pitcherSim;
+
+team Team1 = load("dodgers.team");
+team Team2 = yankees;
+
+print "pitcherSim series: ";
+
+number t1 = 0;
+number t2 = 0;
+do 100 times:
+	team winner = sim(Team1, Team2, 1);
+	if (winner is Team1) then:
+		t1++;
+	else:
+		t2++;
+	end
+end
+print "Dodgers: " + t1;
+print "Yankees: " + t2;
+
+activate anotherSim;
+
+print "anotherSim series: ";
+
+t1 = 0;
+t2 = 0;
+do 100 times:
+	team winner = sim(Team1, Team2, 1);
+	if (winner is Team1) then:
+		t1++;
+	else:
+		t2++;
+	end
+end
+print "Dodgers: " + t1;
+print "Yankees: " + t2;

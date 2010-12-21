@@ -1,0 +1,131 @@
+\section{Data}\label{ref_data}
+
+BALL defines five user-definable data types. These five types are {\tt
+  number}, {\tt string}, {\tt team}, {\tt player}, {\tt list}. These
+five data types can be stored in variables and passed to functions. In
+addition to these three types, BALL also defines three more types,
+{\tt bool}, {\tt null}, and {\tt stat}. Variables cannot be declared
+for these three types, but the values of these types might be passed
+or returned by expressions.
+
+{\tt team} and {\tt player} objects differ from the other types
+because they are the only two types whose instances contain 
+{\it attributes and stats} that contain more information about the
+object. Attributes return other values, themselves might be {\tt team}
+or {\tt player} objects. Stats can only return {\tt number}s. Users
+cannot add more stats or attributes to these two types. See tables
+\ref{ref_data_player_bstats}, \ref{ref_data_battr} and
+\ref{ref_data_team_bstats} for a list of builtin stats and attributes
+that must be implemented.
+
+%%% DESCRIPTION OF DATA TYPES
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{l p{4.5in}}
+{\tt number} &
+the type {\tt number} means a floating-point number. All BALL numbers
+are floating point numbers. \\
+\hline
+{\tt string} &
+A BALL {\tt string} is a sequence of characters. It can be
+concatenated  but not split. \\
+\hline
+{\tt team} &
+A {\tt team} is a collection of players. There is no way to define new {\tt
+  team}s inside a BALL program. Instead all {\tt team} objects must be
+loaded using the {\tt load()} builtin function. \\
+\hline
+{\tt player} & A {\tt player} object contains the name of the player and a
+few statistics regarding the player's performance. There is no way to
+define new {\tt player}s inside a BALL program. Instead all {\tt
+  player} objects come from existing {\tt team} objects. \\
+\hline
+{\tt list} & In BALL, {\tt list} objects are not all equal in type;
+List types are equal only if both lists contain the same type of
+object. (hence the list type definition is recursive.) BALL lists
+can only contain objects of the same type. \\
+\hline
+{\tt bool} & {\tt bool} values represent a truth value: one true and
+one false. {\tt bool} variables cannot be declared, and the explicit
+values are also hidden from the source. Instead {\tt bool} is used for
+logical expressions to communicate with their parent expressions. \\
+\hline
+{\tt null} & Internally, the type {\tt null} is used as a wildcard
+type that matches any other type regardless of what the other type
+is. This type is unavailable for the user but used for builtin
+functions. \\
+\hline
+{\tt stat} & Stats are small expressions that (internally) can be passed
+around as data. Each stat is associated with either {\tt team} objects
+or {\tt player} objects. \\
+
+\end{tabular}
+\end{center}
+\caption{BALL data types}\label{ref_data_types}
+\end{table}
+
+
+%%% PLAYER STATS
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|p{5cm}|}
+\hline
+Name & Type & Meaning\\
+\hline
+\texttt{IP} & Pitcher & Innings Pitched\\
+\texttt{K} & Pitcher & Strikeouts\\
+\texttt{H} & Pitcher & Hits Allowed\\
+\texttt{BB} & Pitcher & Walks Allowed\\
+\texttt{ER} & Pitcher & Earned Runs\\
+\texttt{AB} & Batter & At Bats\\
+\texttt{R} & Batter & Runs\\
+\texttt{H} & Batter & Hits\\
+\texttt{2B} & Batter & Doubles\\
+\texttt{3B} & Batter & Triples\\
+\texttt{HR} & Batter & Home Runs\\
+\texttt{BB} & Batter & Walks\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Primitive Stats for \texttt{player} objects}\label{ref_data_player_bstats}
+\end{table}%
+
+
+% BUILTIN ATTRIBUTES
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|c|p{5cm}|}
+\hline
+Object Type & Name & Return Type & Meaning\\
+\hline
+\texttt{player} & \texttt{name} & \texttt{string} & Name loaded from CSV \\
+\texttt{team} & \texttt{teamname} & \texttt{string} & Team name from
+CSV \\
+\texttt{team} & \texttt{BATTERS} & \texttt{list of player} & Players
+marked as batters \\
+\texttt{team} & \texttt{PITCHERS} & \texttt{list of player} & Players
+marked as pitchers \\
+\texttt{team} & \texttt{PLAYERS} & \texttt{list of player} & All
+players \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Builtin Attributes}\label{ref_data_battr}
+\end{table}%
+
+
+% BUILTIN TEAM STATS
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|p{5cm}|}
+\hline
+Name & Meaning\\
+\hline
+\texttt{W} & Games Won\\
+\texttt{L} & Games Lost\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Primitive Stats for \texttt{team} objects}\label{ref_data_team_bstats}
+\end{table}%
+

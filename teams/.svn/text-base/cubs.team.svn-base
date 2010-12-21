@@ -1,0 +1,30 @@
+Team Name:Chicago Cubs
+Header:W,L
+83,78
+
+Type:Batter
+Header:Name,AB,R,H,2B,3B,HR,BB
+Geovany Soto,331,27,72,19,1,11,50
+Derrek Lee,532,91,163,36,2,35,76
+Mike Fontenot,377,38,89,22,2,9,35
+Ryan Theriot,602,81,171,20,5,7,51
+Aramis Ramirez,306,46,97,14,1,15,28
+Alfonso Soriano,477,64,115,25,1,20,40
+Kosuke Fukudome,499,79,129,38,5,11,93
+Milton Bradley,393,61,101,17,1,12,66
+Ryan Dempster,64,2,8,1,0,0,4
+Carlos Zambrano#,69,7,15,5,0,4,1
+Ted Lilly*,57,2,5,1,1,0,2
+Randy Wells,47,5,9,3,0,0,2
+Rich Harden*,43,3,8,1,0,0,1
+
+
+Type:Pitcher
+Header:Name,IP,H,ER,HR,BB,K,BF
+Adam Wainwright,233.0,216,68,17,66,212,970
+Joel Pineiro,214.0,218,83,11,27,105,865
+Chris Carpenter,192.2,156,48,7,38,144,750
+Todd Wellemeyer,122.1,160,80,19,57,78,561
+Kyle Lohse,117.2,125,62,16,36,77,512
+
+

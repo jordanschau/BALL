@@ -1,0 +1,22 @@
+/* This is the first comment */;;
+/*** This is the second comment ***/;;
+// This is the third comment */;;
+
+number glob = 10;
+
+function myfun ( number p ) returns number :
+	glob = 101;
+	return 10;
+end
+
+function myfun2 ( number pq ) returns number :
+	glob = 301;
+	return pq;
+end
+
+print myfun(33);	//prints 10
+print glob;			//prints 101
+print myfun2(100);	//prints 100
+print glob;			//prints 301
+
+print 5;

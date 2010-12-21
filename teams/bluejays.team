@@ -1,0 +1,25 @@
+Team Name: Toronto Blue Jays
+Header:W,L
+75,87
+
+Type:Batter 
+Header:Name,AB,R,H,2B,3B,HR,BB
+Rod Barajas,429,43,97,19,0,19,20
+Lyle Overbay,423,57,112,35,1,16,74
+Aaron Hill,682,103,195,37,0,36,42
+Marco Scutaro,574,100,162,35,1,12,90
+Scott Rolen,338,52,108,29,0,8,26
+Travis Snider,241,34,58,14,1,9,29
+Vernon Wells,630,84,164,37,3,15,48
+Alexis Rios,436,52,115,25,2,14,31
+Adam Lind,587,93,179,46,0,35,58
+
+
+Type:Pitcher 
+Header:Name,IP,H,ER,HR,BB,K,BF
+Roy Halladay,239.0,234,74,22,35,208,963
+Ricky Romero,178.0,192,85,18,79,141,771
+Brian Tallet,160.2,169,95,20,72,120,717
+Scott Richmond,138.2,147,85,27,59,117,610
+Brett Cecil,93.1,116,55,17,38,69,422
+Marc Rzepczynski,61.1,51,25,7,30,60,261

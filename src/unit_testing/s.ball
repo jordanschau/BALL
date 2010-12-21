@@ -1,0 +1,25 @@
+team ast = load("astros.team");
+print "astros's wins and losses:";
+print ast's W;
+print ast's L;
+//print ast's NOTHANKS;	//BREAKS
+//print ast'no NOPE;		//BREAKS
+
+list of player astbat = ast's BATTERS;
+player lance = "Lance Berkman" from astbat;
+print "Lance Berkman's average:";
+stat AVG = H/AB;
+stat ERA = 9*(ER/IP);
+print lance's AVG;
+
+list of player astpit = ast's PITCHERS;
+player wandy = "Wandy Rodriguez" from astpit;
+print wandy's name+" earned run average: "+wandy's ERA;
+print wandy's ERA + " Wandy sucks!";
+
+print (any ast's BATTERS)'s AB;
+
+print wandy's IP;
+
+print lance's name;
+print wandy's name;

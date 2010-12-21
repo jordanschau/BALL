@@ -1,0 +1,31 @@
+Team Name:New York Mets
+Header:W,L
+70,92
+
+Type:Batter
+Header:Name,AB,R,H,2B,3B,HR,BB
+Omir Santos,281,28,73,14,1,7,15
+Daniel Murphy,508,60,135,38,4,12,38
+Luis Castillo,486,77,147,12,3,1,69
+Alex Cora,271,31,68,11,1,1,25
+David Wright,535,88,164,39,3,10,74
+Gary Sheffield,268,44,74,13,2,10,40
+Carlos Beltran,308,50,100,22,1,10,47
+Jeff Francoeur,289,40,90,20,2,10,11
+Mike Pelfrey,52,4,5,1,0,0,2
+Johan Santana,42,1,7,3,0,0,5
+Livan Hernandez,40,0,5,0,0,0,1
+Tim Redding,29,0,2,0,0,0,0
+John Maine,27,0,4,0,0,0,0
+Oliver Perez,22,1,6,0,0,0,1
+
+
+Type:Pitcher
+Header:Name,IP,H,ER,HR,BB,K,BF
+Mike Pelfrey,184.1,213,103,18,66,107,824
+Johan Santana,166.2,156,58,20,46,146,701
+Livan Hernandez,135.0,164,82,16,51,75,593
+Tim Redding,120.0,122,68,18,50,76,525
+John Maine,81.1,67,40,8,38,55,349
+Oliver Perez,66.0,69,50,12,58,62,324
+

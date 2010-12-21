@@ -1,0 +1,60 @@
+
+\chapter{Preamble}\label{intro}
+
+\section{Language Whitepaper}\label{whitepaper}
+BALL (Basic Athletic Logic Language) is a language designed for analyzing and simulating sports games, in particular baseball. It is designed to help the user analyze a baseball game or season, through the help of statistical data gathered for the teams and each player in the team and simulations. BALL takes one or more team files that contain information about baseball teams. Each file will have an entry for each player on the team, and statistical data for each player (for those unfamiliar with baseball terminology, we have provided a small glossary in the back of this document).  A user can create BALL programs that can analyze and manipulate statistics for the teams, as well as run simulations of games between two teams. This document will explain the nine features of BALL and how each feature makes BALL an effective tool for analyzing and simulating baseball.
+
+BALL: A Simple, portable, scalable, realistic, high performance, expandable, user friendly, future-proof, focused language.
+
+We use the set of buzzwords above to describe the BALL language, and the following will clarify and explain each one while addressing the problems that BALL seeks to solve.
+
+\subsection{Simple}
+BALL's users want to spend most of their time analyzing and predicting the outcome of sports games, they do not want to spend much time with mundane programming tasks such as complicated function and variable declarations, garbage collection, or confusing syntax. As a result, BALL omits many of the features in broad-use programming languages that are unnecessary to program in BALL; yet respecting some common syntax standards with which users are comfortable. When building BALL, we created a system that eliminates error-prone situations that current object-oriented programming languages have.  BALL is designed specifically for manipulating sports games so that our users can jump in right away!
+
+\subsection{Portable}
+Because it is built upon the highly-portable programming environment of Java, BALL programs and the BALL compiler will be cross-platform from day one. Any platform that the user is running, so long as it is capable of running the Java Virtual Machine, will provide the necessary environment for BALL.
+
+\subsection{Scalable}
+Sporting events come in all sizes, from informal two-team games to an entire national league and possibly beyond. Baseball is no exception, and BALL is able to handle that. There is no set limit on the number of team files or program size, be it a small school tournament or the entire Major League. BALL can also simulate games from just a single game to a whole season with various teams. In particular, a single simulation based on two team files will take roughly the same amount of time as a game based on the entire thirty teams of Major League Baseball. BALL does this through clever use of its resources such that team objects for other teams will not obstruct the two teams currently playing. Moreover, instead of loading massive libraries automatically, team files are only loaded when upon request by the user.
+
+\subsection{Realistic}
+Being a simulator, a key requirement for BALL is to be able to play out a ``life-like'' baseball game entirely inside the computer. A BALL game will be based on the statistics fed to it, which gives the program a very sterile and rough approximation of a player's skill. BALL then plays these statistics with the opposing team's and constructs a scenario that will look as much like a real life game as possible. Thus each game will not be so random that the statistical data has no correlation with the results, but also not purely deterministic that one can determine the winner just by looking at the numbers. A user running a game will see that teams with better averages are more likely to win, but unexpected things can occur, something that made real life baseball the very exciting sport we see today.
+
+\subsection{High Performance}
+A key requirement for a baseball simulation program to be effective, is that it produces quick and reasonable results. With these requirements in mind, several choices were made to enhance the performance of BALL when dealing with data manipulation and computation. The data management backend was specifically designed to allow BALL fast streamlined access to all required statistical data. Similarly, Java was chosen to write the compiler in order to leverage its performance reputation in producing bytecode that is quickly translated at runtime into machine code for any particular CPU. These advantages should allow BALL to meet the expectations of even the most demanding users.
+
+\subsection{Expandable}
+One of our main focuses in designing BALL is allowing the user to add statistical data to the various preexisting tables of data as well as defining new statistics as they see fit. This aspect is the key to BALLs expandability. Just as a user can define new stats, he similarly can define new rules or even new games.
+
+\subsection{User Friendly}
+One of our goals is for novice programmers to spend little time learning BALL and start programming right away. We did this in part by imposing strict rules on constructs such as simulation functions, and partly by giving the user a lot of freedom: They need not worry about scoping, number types and conversion, or declarations that are irrelevant to baseball simulations. Here are some examples (each of these snippets are acceptable BALL programs):
+\begin{verbatim}
+number aNumber = 2 + 3.115; /* Numbers are not strongly typed */
+
+/* Intuitive list declaring and concatenating */
+list of string hWorld = ["hello", "world"] + ["play", "ball"];
+
+/* Easy team and list filtering, iterating */
+team dod = load("dodgers.team");
+foreach p in dod's BATTERS where (item's AB > 100):
+    print "Active Batter: " + p's name;
+end
+\end{verbatim}
+
+\subsection{Future-proof}
+BALL is future-proofed against rule changes and statistical changes. Programmers writing BALL programs can create new benchmark statistics, import entirely different teams and data, and thus completely change the usage of BALL. As a result, it is possible for external (non-athletic) data manipulation could be handled with BALL.
+
+\subsection{Focused}
+BALL is focused on athletic applications, specifically on simulating baseball games and maintaining and understanding/interpreting baseball statistics and sabermetrics. Because baseball is a sport with much statistical data, BALL is built for baseball, but can be expanded to other sports (see Future-proof). Nonetheless BALL is focused on athletic applications, and their statistical and logical interpretations.
+
+\subsection{Conclusion}
+BALL provides novice users with a minimalistic system that they can use to unleash its power; and provides advanced programmers with all the tools to expand BALL's capabilities to any sports game, season, or league, and customize aspects of the BALL simulation engine. BALL's abstracted design allows users to take the engine to any level of complexity, and work with as many different kinds of data as necessary. BALL includes a vast set of default actions and convenient automated features all of which can be overridden at the user's command. With a core foundation based on the robust and widespread Java language, BALL is just as reliable, quick, and platform-independent.
+\subsection{Glossary}
+Here we will give rough definitions of some baseball terms that might be unfamiliar to the audience. More precise definitions can be found in the Web.
+
+\begin{description}
+\item[AVG (batting average)]  the ratio of the number of times a player gets a hit to the number of times he is at bat
+\item[ERA (earned run average)] the mean of the number of times a pitcher allows a run (when a player of the opposing team successfully returns to home plate, scoring a point) per 9 innings pitched
+\item[OBP (on-base percentage)] the measure of how often a player safely reaches base for any reason other than an error on the opposing team or a fielder's choice
+\item[WHIP (walks plus hits per inning pitched)] the average number of batters a pitcher has allowed to first base per inning
+\end{description}

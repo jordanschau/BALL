@@ -1,0 +1,28 @@
+/* This is the first comment */
+/*** This is the second comment ***/
+// This is the third comment */
+
+/*
+ * compile with -cp .:javabackend/
+ * run with -cp .:javabackend/
+ */
+
+team Dodgers = load("dodgers.team"), Astros = load("astros.team");
+print "THE DODGERS:";
+print Dodgers;
+
+print "\nTHE ASTROS";
+print Astros;
+
+print 15.123235234;
+print 0.0;
+print .99;
+print 1.1;
+print .1;
+//playball;
+if (not isValid("a" from string[])) then:
+	print "hi";
+else:
+	print "bleh";
+end
+

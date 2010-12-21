@@ -1,0 +1,37 @@
+/* a simple simulation function */
+simfunction simpleSim is:             // Declaring function with ’is’
+	number x = rand(0,1);	  	 	  // Assign a random number between 1&0 to x
+//	print x;				  		  // Debugging code, commented out
+    if (x > 0.5) then:		  		  // If x is on the upper half, then:
+       return team1;		  		  // team1 wins this simulation
+    else:					  		  // If x is on the lower half, then:
+       return team2; 		  		  // team2 wins this simulation
+    end						  		  // End the if-statement
+end                                   // End the simfunction declaration
+
+activate simpleSim;                   // Activates sim function
+team yanks = load("yankees.team");    // Loads Team file
+team birds = load("orioles.team");    // Loads Team file
+team winner = sim(birds,yanks,1);     // Store the winner of the simulation
+print "Winner: " + winner's teamname; // Prints result
+
+print "Here's the winning team: ";	  // Display a statement
+
+number x = 0;						  // Counting number
+print "==* " + winner's teamname + " Batters *==";
+foreach p in winner's BATTERS:		  // A foreach statment for BATTERS
+	print ++x +".\t" + p's name + "\t Hits:\t" + p's H;
+end
+print "";
+
+x = 0;
+print "==* " + winner's teamname + " Pitchers *==";
+foreach p in winner's PITCHERS:
+	print ++x +".\t" + p's name + "\t Strikeouts:\t" + p's K;
+end
+
+//playball;							  // Happy Easter!
+
+
+
+  

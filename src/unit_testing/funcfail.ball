@@ -1,0 +1,19 @@
+/* This is the first comment */
+/*** This is the second comment ***/
+// This is the third comment */
+
+function myfun ( number p ) returns number :
+	return 10;
+end
+
+// same function name
+function myfun ( number pq ) returns number :
+	return pq;
+end
+
+print myfun(33);
+
+print 5;
+
+//this function fails because they share the same name
+//fails nicely too.

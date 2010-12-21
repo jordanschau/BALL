@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="llamamelon" default="compile">
+
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build" />
+	<property name="classes.dir" value="${build.dir}/classes" />
+
+	<property name="lex.dir" value="src/lexer" />
+	<property name="lex.outdir" value="src/compiler" />	
+	<property name="lex.file" value="ball.lex" />
+	<property name="lex.output" value="Yylex.java" />
+
+	<property name="yacc.dir" value="src/codegen" />
+	<property name="yacc.outdir" value="src/compiler" />	
+	<property name="yacc.file" value="ball.y" />
+	<property name="yacc.parser" value="Parser.java" />
+	<property name="yacc.parserval" value="ParserVal.java" />
+	
+	<target name="cleangen">
+			<delete file="${lex.outdir}/${lex.output}" />
+			<delete file="${yacc.outdir}/${yacc.parser}" />
+			<delete file="${yacc.outdir}/${yacc.parserval}" />
+	</target>
+	
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+	
+	<target name="gen">
+		<!-- generate the lexer -->
+		<exec executable="jflex">
+			<arg value="-nobak" />
+			<arg value="-d" />
+			<arg value="${lex.outdir}" />
+			<arg value="${lex.outdir}/${lex.file}" />
+		</exec>
+
+		<!-- generate the parser -->
+		<exec executable="byaccj">
+			<arg value="-Jclass=Parser" />
+			<arg value="-Jpackage=compiler" />	
+			<arg value="${yacc.outdir}/${yacc.file}" />
+		</exec>
+		<move file="${yacc.parser}" todir="${yacc.outdir}" />
+		<move file="${yacc.parserval}" todir="${yacc.outdir}" />
+	</target>
+
+	<target name="compile">
+		<!-- make the output path -->
+		<mkdir dir="${classes.dir}" />
+		<copy todir="${build.dir}/teams">
+    			<fileset dir="teams"/>
+  		</copy>
+		<exec executable="cp">
+			<arg value="${src.dir}/BALL" />
+			<arg value="${classes.dir}" />
+		</exec>
+
+		<javac destdir="${classes.dir}">
+			<src path="${src.dir}/compiler"/>
+			<src path="${src.dir}/lexer"/>
+			<src path="${src.dir}/codegen"/>
+			<src path="${src.dir}/javabackend"/>
+		</javac>
+	</target>
+
+</project>

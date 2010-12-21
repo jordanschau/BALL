@@ -1,0 +1,25 @@
+number x, y;
+
+x = 1;
+
+print x++; 	//should print 1 
+
+print ++x;	//should print 3 
+
+print x--; 	//should print 3
+
+print --x;	//should print 1
+
+
+y = x++ + ++x;	//this is the killllller
+
+print y; 	//should print 4 - AND IT DOES -PURENEEDS
+print x;	//should print 3 - AND IT DOES -PURENEEDS
+
+++x;
+x++;
+print x;	//should print 5
+
+
+
+

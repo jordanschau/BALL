@@ -1,0 +1,10 @@
+list of number x1 = [ 1, 2, 3, 4, 5 ];
+list of number x2 = [ 6, 7, 8, 9, 10 ];
+
+print x2 where (item > 6) where (item < 9);
+
+print (x1 + x2) where (item >= 3 and item <= 8);
+
+print (x1 + x2) where (item % 2 is 0);
+
+print (x1 where (item > 3)) + x2 where (item < 9);

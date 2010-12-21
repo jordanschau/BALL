@@ -1,0 +1,35 @@
+//correct output
+//including "stress testing"
+//
+print [ 3, 4, 5 ];
+print [ "a", "b", "c" ];
+print [ [ 3, 4, 5 ], [ 6, 7 ], [ 8 ] ];
+
+list of number x1 = [ 4, 5, 6, 7 , 8 , 9];
+list of number x2;
+list of string x3 = [ "a", "b" ];
+
+x2 = [ 3, 4];
+x2 = [4, 5, 10 + 13];
+
+function meh (list of string x1, list of string x2) returns nothing:
+	print x1 + x2;
+end
+
+function meh2 (list of number x1, list of number x2) returns nothing:
+	print x1 + x2;
+end
+
+meh2(x1, x2);
+
+print "stress" + "testing";
+
+//x2 = [ "p", "q", "r" ]; // fail
+//print [ [ 3, 4, 5 ], [ "a", "b" ], [ 8 ] ]; // fail
+
+list of list of number xx1 =  [ [ 3, 4, 5 ], [ 1, 2 ], [ 8 ] ]; // succeed
+print xx1;
+
+//meh(x1, x3); // fail
+//print [ 3, "a", [ 2, 4, 1 ] ]; // fail
+

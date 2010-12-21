@@ -1,0 +1,26 @@
+Team Name: Baltimore Orioles
+Header:W,L
+64,98
+
+Type:Batter 
+Header:Name,AB,R,H,2B,3B,HR,BB
+Matt Wieters,354,35,102,15,1,9,28
+Aubrey Huff,430,51,109,24,1,13,41
+Brian Roberts,632,110,179,56,1,16,74
+Cesar Izturis,387,34,99,14,4,2,18
+Melvin Mora,450,44,117,20,0,8,34
+Nolan Reimold,358,49,100,18,2,15,47
+Adam Jones,473,83,131,22,3,19,36
+Nick Markakis,642,94,188,45,2,18,56
+Luke Scott,449,61,116,26,1,25,55
+
+
+Type:Pitcher 
+Header:Name,IP,H,ER,HR,BB,K,BF
+Jeremy Guthrie,200.0,224,112,35,60,110,874
+Brad Bergesen,123.1,126,47,11,32,65,519
+Jason Berken,119.2,164,87,19,44,66,560
+David Hernandez,101.1,118,61,27,46,68,462
+Koji Uehara,66.2,71,30,7,12,48,279
+Rich Hill,57.2,68,50,7,40,46,275
+

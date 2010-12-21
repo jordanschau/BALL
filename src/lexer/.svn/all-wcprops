@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/553/trunk/src/lexer
+END
+Token.java
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/553/trunk/src/lexer/Token.java
+END
+Type.java
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/553/trunk/src/lexer/Type.java
+END
+Identifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/553/trunk/src/lexer/Identifier.java
+END
+Keyword.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/553/trunk/src/lexer/Keyword.java
+END
+NumericConst.java
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/553/trunk/src/lexer/NumericConst.java
+END
+StringConst.java
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/553/trunk/src/lexer/StringConst.java
+END

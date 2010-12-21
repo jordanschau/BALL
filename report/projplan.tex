@@ -1,0 +1,118 @@
+\chapter{Project Plan}
+
+\section{Development Process}\label{Process}
+
+In developing the BALL language, we followed the suggestion presented
+by Prof. Aho during class: make a working prototype, and incrementally
+add enhancements. During the early parts of the development, more
+attention is focused on adding new features than testing, however each
+team member must create his own test case with the changes he made.
+
+Whenever a part of the language is finished, it is tested and reviewed
+by the team. Feedback is then relayed to the team member responsible
+for the subsystem (usually the one who merged the latest version to
+trunk, as many modules are jointly developed by the team). There is
+less of a focus on the traditional team roles, rather each team member
+focuses on developing the compiler while also doing their job in team
+administration.
+
+\pagebreak
+\section{Style Sheet}\label{Style}
+
+\codelisting{StyleSheet.java}{StyleSheet.java}{../docs/StyleSheet.java}
+
+\pagebreak
+
+\section{Timeline \& Logs}\label{TimelineLogs}
+\subsection{Timeline of BALL Development}
+
+\begin{center}
+\tablefirsthead{%
+  \hline
+  Date & Event \\
+  \hline
+}
+\tablehead{%
+  \hline
+  \multicolumn{2}{|l|}{\footnotesize\sl continued from previous page}\\
+  \hline
+  Date & Event \\
+  \hline
+}
+\tabletail{%
+  \hline
+  \multicolumn{2}{|r|}{\footnotesize\sl continued on next page}\\
+  \hline}
+\tablelasttail{\hline}
+\bottomcaption{SVN commit log}
+\small
+
+\begin{supertabular}{|c|p{5in}|}
+9/18/09, 11:31a & Team Llamamelon Born.\\
+9/21/09, 5:15p & First Team Llamamelon Meeting; Team Llamamelon
+named. Sam pioneers the language purpose: the simulation of baseball
+games.\\
+9/21/09, 8:02p & Team Llamamelon announced to PLT Teaching Staff.\\
+10/2/09, 4:42p & Alfred V. Aho tentatively approves BALL programming
+language.\\
+10/5/09, 1:04a & Buzzwords for initial Whitepaper finalized.\\
+10/7/07, 3:17p & Final Whitepaper completed.\\
+10/23/09, 2:52p & Sample programs designed, BALL envisioned to be a
+scripting language \`{a} la AWK.\\
+10/27/09, 4:14p & Google Code Group Created. Jordan initializes
+Subversion repository and trains team for first 'commit.'\\
+10/27/09, 5:30p & First major Team Llamamelon Meeting; language
+roadmap created.\\
+10/29/09, 10:30a & First meeting with Sinan; BALL changes from
+scripted language to compiled language, based on Java.\\
+10/30/09, 1:27p & Nathan creates first example program; the new
+language roadmap is born.\\
+10/31/09, 10:42p & Cipta begins creating the grammar, laying the
+groundwork for BALL.\\
+11/3/09, 1:05p & Language Reference Manual and Tutorial begun.\\
+11/3/09, 4:43p & Language Grammar completed, Daniel creates and
+finalizes complex simulation to show off the powerful grammar.\\
+11/4/09, 10:26a & Final Language Reference Manual and Tutorial
+completed.\\
+11/15/09, 3:00p & First semi-weekly meeting. Full grammar implemented
+using JFlex/BYACC-J. Lexer created a DFA!\\
+11/18/09, 8:00p & Second semi-weekly meeting. Play.ball designed,
+intermediate code generation begins.\\
+11/19/09, 11:00a & Second meeting with Sinan; Language Reference
+Manual and Tutorial approved; BALL is in full motion!\\
+11/27/09, 12:43a & Play.Ball compiles and runs: ``Play Ball!'' [Hello
+  world equivalent.]\\
+12/3/09, 3:45p & Team Loader created; teams can now load into the
+PlayerObj and TeamObj constructs.\\
+12/5/09, 11:46a & Major all-day meeting; BALL presentation created and
+beautified.\\
+12/7/09, 4:30p & BALL presented to PLT. There was much rejoicing.\\
+12/10/09, 4:37a & SymbolTable embraced as major component of BALL.\\
+12/10/09, 3:02a & Simfunc.ball compiles and runs: simfunctions and
+activate work.\\
+12/12/09, 10:00a & Major all-day meeting; Much of language completed
+during this time.\\
+12/12/09, 10:48a & TeamStat and PlayerStat methods added: stats work
+throughout BALL.\\
+12/12/09, 7:59p & Lists become typed, major change in the language.\\
+12/12/09, 8:55p & Logical, Boolean, Comparison expressions completed.\\
+12/15/09, 12:56a & \texttt{where}, \texttt{from}, and \texttt{any} keywords working.\\
+12/16/09, 2:02a & \texttt{'s} keyword works for all attributes, stats, and
+lists inherent in team and player objects.\\
+12/16/09, 6:08p & Unary operators completed.\\
+12/17/09, 6:27p & Realized the class number is W4115, not
+W4119. [Seriously.]\\
+12/20/09, 10:30a & Final Major all-day meeting: everything completed.\\
+12/20/09, 8:04p & Everything in the language works. Final presentation
+compilation begun.\\
+Now & Final presentation completed.\\
+
+\end{supertabular}
+
+\normalsize
+\end{center}
+
+\pagebreak
+\subsection{Project Log}
+
+\input{projlog.tex}

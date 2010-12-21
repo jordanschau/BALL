@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 69
+*.aux
+*.lof
+*.lot
+*.pdf
+*.toc
+source_old.tex
+source1.tex
+source2.tex
+
+END

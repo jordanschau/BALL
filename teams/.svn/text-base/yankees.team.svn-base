@@ -1,0 +1,23 @@
+Team Name: New York Yankees
+Header:W,L
+103,59
+
+Type:Batter 
+Header:Name,AB,R,H,2B,3B,HR,BB
+Jorge Posada,383,55,109,25,0,22,48
+Mark Teixeira,609,103,178,43,3,39,81
+Robinson Cano,637,103,204,48,2,25,30
+Derek Jeter,634,107,212,27,1,18,72
+Alex Rodriguez,444,78,127,17,1,30,80
+Johnny Damon,550,107,155,36,3,24,71
+Melky Cabrera,485,66,133,28,1,13,43
+Nick Swisher,498,84,124,35,1,29,97
+Hideki Matsui,456,62,125,21,1,28,64
+
+
+Type:Pitcher 
+Header:Name,IP,H,ER,HR,BB,K,BF
+C.C. Sabathia,230.0,197,86,18,67,197,938
+A.J. Burnett,207.0,193,93,25,97,195,896
+Andy Pettitte,194.2,193,90,20,76,148,834
+Joba Chamberlain,157.1,167,83,21,76,133,709

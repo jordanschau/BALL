@@ -1,0 +1,25 @@
+Team Name: Boston Red Sox
+Header:W,L
+95,67
+
+Type:Batter 
+Header:Name,AB,R,H,2B,3B,HR,BB
+Jason Varitek,364,41,76,24,0,14,54
+Kevin Youkilis,491,99,150,36,1,27,77
+Dustin Pedroia,626,115,185,48,1,15,74
+Nick Green,276,35,65,18,0,6,20
+Mike Lowell,445,54,129,29,1,17,33
+Jason Bay,531,103,142,29,3,36,94
+Jacoby Ellsbury,624,94,188,27,10,8,49
+J.D. Drew,452,84,126,30,4,24,82
+David Ortiz,541,77,129,35,1,28,74
+
+
+Type:Pitcher 
+Header:Name,IP,H,ER,HR,BB,K,BF
+Josh Beckett,212.1,198,91,25,55,199,883
+Jon Lester,203.1,186,77,20,64,225,843
+Brad Penny,131.2,160,82,17,42,89,590
+Tim Wakefield,129.2,137,66,12,50,72,572
+Clay Buchholz,92.0,91,43,13,36,68,399
+Daisuke Matsuzaka,59.1,81,38,10,30,54,283

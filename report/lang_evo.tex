@@ -1,0 +1,111 @@
+\chapter{Language Evolution}
+
+\section{Implementation Evolution}
+
+At first, BALL was just a mixture of ideas. Early in the brainstorming
+sessions, we determined our goal should be to facilitate the
+simulation of Baseball games: we had identified a need. Baseball is
+one of the most studied games in terms of statistics. A language that
+effectively makes use of all of this available data is without any
+doubt going to help predicting and simulating the outcome of a game or
+a season. Baseball was without a doubt a sport of choice due to its
+structure: bases can be assimilated to computational states, and the
+playoff is a binary problem: it can be assimilated to a game in
+between a batter and a pitcher from each team.
+
+\subsection{The initial idea}
+As we started deciding on how a BALL program will look like, we were
+first inclined towards creating a scripting language in the style of
+AWK: our language would be focused on heavy manipulation of data,
+which can come in handy when dealing with a lot of
+statistics. Following this idea, we envisioned a scripting language
+that would provide as many shortcuts as possible to compute statistics
+and apply them to players and teams. Nevertheless, some imminent
+issues came to our minds: would this provide a good environment for a
+novice programmer (most likely to be a baseball fan) to simulate a
+game step by step? Would our language be too much like a simulation
+program and not enough like a programming language?
+
+\subsection{The new BALL}
+Our final decision was to create a compiled language. This was
+definitely a more novice-friendly alternative, and most certainly a
+better way to allow programmers to define exactly how they would like
+to use the data to simulate a Baseball game. Nevertheless, we thought
+we should not completely forget the benefits of a scripting
+language. Could we make a language somewhat like SQL? We needed some
+quick and easy ways to extract players from a team, items from a list
+and filter lists. Eventually, after much more planning and discussing
+through the good code wiki, we came up with SQL-like functionality
+such as the \texttt{from} keyword which matches and returns an item from a
+list, \texttt{where (expression)} which returns a sub-list of items that
+satisfy the expression provided and the \texttt{any} keyword which retrieves
+a random item from a list. Keeping some of the benefits of scripting
+languages, we devised a very important tool: stats. Stats would be
+declared as a function of other, predefined or previously defined
+stats. Programmers would be able to retrieve new stats from players or
+teams in the same way as attributes, but the primitive stats
+referenced by the newly defined stat would be retrieved from the
+player or team in question. Lastly, we compared our language to others
+such as C and Java and decided we could simplify it greatly. To
+minimize programming errors, BALL is Baseball simulation specialized
+and only provides the tools necessary for simulating baseball
+games. We also introduced english-like keywords to help novice
+programmers (who just want to simulate baseball games!) jump in as
+soon as possible.
+
+\subsection{Implementation process}
+Our coding process was entirely driven by goals. Our goals consisted
+of small test files to be compiled successfully. Our first goal was
+the ``hello world'' program:
+
+\begin{verbatim}
+print "playball!";
+\end{verbatim}
+
+We started by setting up our parser (BYACC/J) and have it accept our
+grammar. The next step was our lexer (JFLEX). We quickly added regular
+expressions for our tokens and returned the \texttt{print} and
+StringConstant tokens to the parser. This way, after creating the
+print statement parse tree node, our language successfully printed
+``playball!'';
+
+From this point on, distributing the work was much simpler: Each of
+the members of the team would go ahead and implement a tree node of
+their choice. Each tree node would be responsible for generating its
+own java equivalent. However, since all of these tiny classes need to
+work together harmoniously, each parse tree node was a team effort and
+most of the coding was done during our long meetings.it is very hard
+to track down a specific class to less then three people: whenever
+some major changes were made, such as having the compiler output to a
+java file and pile it instead of simply outputting to standard output,
+required attention and participation from the entire team.
+
+We were committed to keep our language details identical from he
+moment we first wrote our reference manual. Examples of challenging
+tasks that had to be completed:
+
+Both stats (portable functions) and attributes (fields) would have to
+be retrieved equally using the accessor \texttt{'s}.  the keywords
+\texttt{any} and \texttt{from} would have to extract players from
+teams as well as objects from lists.  \texttt{where} statements would
+have to work on lists of any type.
+
+We discussed all of these problems by reviewing the code on the big
+screen and we were able to solve them all. For example, to make
+\texttt{from} and \texttt{any} work on both lists and teams, we gave
+teams three new attributes: BATTERS, PITCHERS and PLAYERS which can be
+accessed using \texttt{team1's PLAYERS} and return
+\texttt{list}s. Other challenges, such as \texttt{where} statements,
+drove us to make major changes.
+
+
+\section{Change Management process}
+
+We used SVN on Google Code repository to track our changes. Each of us
+became very familiar with all the functionality of SVN, each of us
+branching to implement new functionality and merging to the trunk
+whenever a task was completed and thoroughly tested.
+
+We faced some challenges when merging together changes from different
+team members, reverting and differentiating. We got used to it quickly
+and made the most out of this version management system.

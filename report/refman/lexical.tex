@@ -1,0 +1,342 @@
+
+\section{Lexical Conventions} \label{lexical convention}
+BALL has the following five kinds of tokens: identifiers, keywords, constants, operators, and other separators. For example, the following line of code: \texttt{player aroid = "Alex Rodriguez" from Yankees;} breaks down to the following tokens:
+
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Code & Token\\
+\hline
+\texttt{player} & keyword \\
+
+\texttt{aroid} & identifier\\
+
+\texttt{=} & operator\\
+
+\texttt{"Alex Rodriguez"} & constant\\
+
+\texttt{from} & keyword\\
+
+\texttt{Yankees} & identifier\\
+
+\texttt{;} & separator\\
+\hline
+\end{tabular}
+\caption{Token Example}
+\end{center}
+\label{token example}
+\end{table}
+BALL is a strictly case sensitive language, also much like Java.
+
+\subsection{Comments}
+BALL comments follow the same format as Java. Single line comments begin with \texttt{//} and are terminated at the end of the line. Multiline comments begin \texttt{/*} and end with \texttt{*/}.
+\subsection{Identifiers}
+Identifiers are similar to in Java, with the exception that BALL identifiers may begin with a digit, provided that there is at least one alphabet character or underscore in the identifier. This represents a major improvement over Java and allows variable names such as \texttt{2B} representing doubles. That is, identifiers are members of the language defined by the following regular expression: 
+\begin{verbatim}
+        [a-zA-Z0-9_]*[a-zA-Z_][a-zA-Z0-9_]*
+\end{verbatim}
+
+\subsection{Keywords} \label{keywords}
+The following are the keywords in the BALL language: \texttt{from}, \texttt{any}, \texttt{stat}, \texttt{where}, \texttt{item}, \texttt{foreach}, \texttt{in}, \texttt{do}, \texttt{stopdo}, \texttt{times}, \texttt{player}, \texttt{team}, \texttt{list}, \texttt{of},  \texttt{number}, \texttt{string}, \texttt{print}, \texttt{if}, \texttt{then}, \texttt{else}, \texttt{return}, \texttt{simfunction}, \texttt{activate}, \texttt{function}, \texttt{returns}, \texttt{nothing}, \texttt{is}, \texttt{end}.
+\subsubsection{\texttt{from}}
+The \texttt{from} keyword selects an element within a \texttt{list} object. 
+\begin{verbatim}
+        player aroid = "Alex Rodriguez" from Yankees's BATTERS;
+\end{verbatim}
+
+\subsubsection{\texttt{any}}
+The \texttt{any} keyword selects a random element within a \texttt{list} object.
+\begin{verbatim}
+        player dback = any Diamondbacks's PLAYERS;
+\end{verbatim}
+
+\subsubsection{\texttt{stat}}
+The \texttt{stat} keyword defines a new statistic function. 
+\begin{verbatim}
+        stat AVG = H / AB;
+\end{verbatim}
+
+\subsubsection{\texttt{where}}
+The \texttt{where} keyword selects a sublist within a \texttt{list} object. 
+\begin{verbatim}
+        list of player 300hitters = Dodgers's PLAYERS where (item's AVG > .300);
+\end{verbatim}
+
+\subsubsection{\texttt{item}}
+The \texttt{item} keyword refers to each element of a \texttt{list} filtered by the \texttt{where} keyword. 
+\begin{verbatim}
+        list 300hitters = Dodgers's PLAYERS where (item's AVG > .300);
+\end{verbatim}
+
+\subsubsection{\texttt{foreach}} \label{foreach}
+The \texttt{foreach} keyword iterates through each element in a \texttt{list} object. 
+\begin{verbatim}
+        foreach p in Royals's PITCHERS: 
+               print p's name;
+        end
+\end{verbatim}
+
+\subsubsection{\texttt{in}}
+The \texttt{in} keyword is integral to the \texttt{foreach} loop structure. See \ref{foreach} above.
+
+\subsubsection{\texttt{do}} \label{do}
+The \texttt{do} keyword creates an iterating loop, similar to \texttt{do}/\texttt{while} or \texttt{for} in Java.
+\begin{verbatim}
+        number n=0;
+        do 5 times:
+            n++;
+            print "hello "+n;
+        end
+\end{verbatim}
+
+\subsubsection{\texttt{stopdo}} \label{stopdo}
+The \texttt{stopdo} keyword is similar to the \texttt{break} keyword in Java. It escapes a \texttt{do} loop before the completion of all iterations.
+\begin{verbatim}
+    do 5 times:
+        player dback = any Diamondbacks's PLAYERS;
+        print dback's name;
+        if (dback's name is "Jon Garland") then:
+            stopdo;
+        end
+    end
+\end{verbatim}
+
+\subsubsection{\texttt{times}}
+The \texttt{times} keyword is integral to the \texttt{do} loop. See \ref{do} above.
+
+\subsubsection{\texttt{player}}
+The \texttt{player} keyword defines a new \texttt{player} object.
+\begin{verbatim}
+    player nat = any Nationals's PLAYERS;
+\end{verbatim}
+
+\subsubsection{\texttt{team}}
+The \texttt{team} keyword defines a new \texttt{team} object.
+\begin{verbatim}
+    team champs = sim(Astros, Reds, 1);
+\end{verbatim}
+
+\subsubsection{\texttt{list}} \label{list}
+The \texttt{list} keyword defines a new \texttt{list} object.
+\begin{verbatim}
+    list of player 300hitters = RedSox's PLAYERS where (item's AVG > .300);
+\end{verbatim}
+
+\subsubsection{\texttt{of}}\label{of}
+The \texttt{of} keyword is integral to the \texttt{list} declaration. See \ref{list}
+
+
+\subsubsection{\texttt{number}}
+The \texttt{number} keyword defines a new \texttt{number} instance.
+\begin{verbatim}
+    player bigZ = "Carlos Zambrano" from Cubs's PITCHERS;
+    number n = bigZ's ERA;
+\end{verbatim}
+
+\subsubsection{\texttt{string}}
+The \texttt{string} keyword defines a new \texttt{string} instance. 
+\begin{verbatim}
+    string name = "Lance Berkman";
+\end{verbatim}
+
+\subsubsection{\texttt{print}}
+The \texttt{print} keyword prints something to the standard output.
+\begin{verbatim}
+    player vlad = "Vladimir Guerrero" from Angels's BATTERS;
+    print vlad's AVG;
+\end{verbatim}
+
+\subsubsection{\texttt{if}} \label{if}
+The \texttt{if} keyword opens an \texttt{if} statement.
+\begin{verbatim}
+    player bro = any Twins's PLAYERS;
+    print bro's name;
+    if (bro's name is "Joe Mauer") then:
+            print "What an average!";
+    end
+\end{verbatim}
+
+\subsubsection{\texttt{then}}
+The \texttt{then} keyword is integral to the \texttt{if} statement. See \ref{if} above.
+
+\subsubsection{\texttt{else}}
+The else keyword begins and alternate statement to a previous if statement.
+\begin{verbatim}
+    player roar = any Tigers's PITCHER;
+    print roar's name;
+    if (roar's name is "Justin Verlander") then:
+        print "Wow, heck of an ERA!";
+    else:
+        print "You're not Verlander!";
+    end
+\end{verbatim}
+
+\subsubsection{\texttt{return}}
+The \texttt{return} keyword is used to return either the winning team in a simfunction (see \ref{simfunction} below) or a value required for a returning function (see \ref{function}).
+\begin{verbatim}
+    function simple(player p) returns string:
+        return p's name;
+    end
+\end{verbatim}
+
+\subsubsection{\texttt{simfunction}} \label{simfunction}
+The \texttt{simfunction} keyword is used to create a new simulation function used to carry out the actual simulations of games. [Note that \texttt{team1} and \texttt{team2} are implicitly passed to the \texttt{simfunction} whenever \texttt{sim} is called. These are implicit keywords.]
+\begin{verbatim}
+    simfunction badSim is:
+        if (team1's W > team2's W ) then:
+            return team1;
+        else:
+            return team2;
+        end
+    end
+
+\end{verbatim}
+
+\subsubsection{\texttt{activate}}\label{activate}
+The \texttt{activate keyword} is used to apply a \texttt{simfunction} for use by the function \texttt{sim}.
+\begin{verbatim}
+    activate badSim;
+\end{verbatim} 
+
+\subsubsection{\texttt{function}} \label{function}
+The \texttt{function} keyword is used to define a new function.
+\begin{verbatim}
+    function simple(player p) returns string:
+        return p's name;
+    end
+\end{verbatim}
+
+\subsubsection{\texttt{returns}}\label{returns}
+The \texttt{returns} keyword is used to define the return type of a function. See \ref{function} above.
+
+\subsubsection{\texttt{nothing}}\label{nothing}
+The \texttt{nothing} keyword replaces Java's \texttt{void} keyword. It is a return type for functions that don't return anything.
+\begin{verbatim}
+    function simple(player p) returns nothing:
+        print p's avg;
+    end
+\end{verbatim}
+
+\subsubsection{\texttt{is}}\label{is}
+The \texttt{is} keyword is integral to the \texttt{simfunction} declaration (see \ref{simfunction}). 
+
+\subsubsection{\texttt{end}}\label{end}
+The \texttt{end} keyword is required at the end of every loop, if-statement, function, and \texttt{simfunction} declaration. See \ref{foreach}, \ref{do}, \ref{if}, \ref{simfunction}, \ref{function} above.
+
+\subsection{Constants}
+Much like Java, BALL constants consist of two major categories,
+numeric constants and string constants. These are both touched upon
+briefly in section \ref{ref_data} "Data."
+
+\subsubsection{Numeric Constants}
+Numeric constants, because they apply to the \texttt{number} type, are
+treated as only one type. However, they can be represented as both a
+whole number or a floating point value. [Integer values, such as a
+  number of hits; float values such as a batting average.] The unary
+minus operation to specify negative numbers must also be
+supported. Numeric constants are members of the language defined by
+the following regular expression.
+
+\begin{verbatim}
+    0 | [-]?[0-9]*[.]?[0-9]+
+\end{verbatim}
+
+\subsubsection{String Constants}
+String constants are character sequences. They must begin and end with quotation marks. Note that BALL does not have a char type. All character sequences must be within double-quotation marks and are treated as string constants. All special escaped characters that Java supports are supported by BALL, including but not limited to the ones in Table \ref{escape}.
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\texttt{\textbackslash n} & \texttt{\textbackslash t} & \texttt{\textbackslash \textbackslash} & \texttt{\textbackslash "}\\
+\hline
+\end{tabular}
+\caption{Some Acceptable Escape Characters}\label{escape}
+\end{center}
+\end{table}%
+
+\subsection{Operators}
+BALL contains six types of operators: assignment, logical, comparison, arithmetic, incrementor, and accessor. Generally, these operators are similar to in other standard programming languages such as Java, but some notable exceptions, shown below, are implemented in BALL.
+
+\subsubsection{Assignment Operators}
+Table \ref{assigntable} shows the assignment operators.
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\texttt{=} & \texttt{+=} & \texttt{-=} & \texttt{*=} & \texttt{/=} & \texttt{\%=}\\
+\hline
+\end{tabular}
+\caption{BALL's Assignment Operators}\label{assigntable}
+\end{center}
+\end{table}%
+They act just like in Java.
+
+\subsubsection{Logical Operators}
+Table \ref{logical operators} shows the logical operators and their Java equivalents.
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+BALL & Java\\
+\hline
+\texttt{and} & \texttt{\&\&} \\
+\texttt{or} & \texttt{\textbar \textbar} \\
+\hline
+\end{tabular}
+\caption{BALL's Logical Operators}\label{logical operators}
+\end{center}
+\end{table}%
+
+\subsubsection{Comparison Operators}
+Table \ref{comparison operators} shows the logical operators and their Java equivalents. 
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+BALL & Java\\
+\hline
+\texttt{is} & \texttt{==} \\
+\texttt{isnot} & \texttt{!=} \\
+\texttt{\textgreater} & \texttt{\textgreater} \\
+\texttt{\textless} & \texttt{\textless} \\
+\texttt{\textgreater =} & \texttt{\textgreater =}\\
+\texttt{\textless =} & \texttt{\textless =}\\
+\hline
+\end{tabular}
+\caption{BALL's Comparison Operators}\label{comparison operators}
+\end{center}
+\end{table}%
+
+\subsubsection{Arithmetic Operators}
+The following are the arithmetic operators: 
+Table \ref{arithmetictable} shows the arithmetic operators. They act just like in Java. The unary minus also fits in this category.
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\texttt{+} & \texttt{-} & \texttt{*} & \texttt{/} & \texttt{\%}\\
+\hline
+\end{tabular}
+\caption{BALL's Arithmetic Operators}\label{arithmetictable}
+\end{center}
+\end{table}%
+
+\subsubsection{Incrementor Operators}
+Table \ref{incremtable} shows the incrementor operators. These can be prefix or postfix. In either case, the behavior is equivalent to Java.
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\texttt{++} & \texttt{----}\\
+\hline
+\end{tabular}
+\caption{BALL's Incrementor Operators}\label{incremtable}
+\end{center}
+\end{table}%
+
+\subsubsection{Accessor}
+{\tt 's} (apostrophe `s') is BALL's only accessor operator.
+
+\subsection{Separators}
+The following are the separators in BALL: whitespace, comma, semicolon, colon, the keyword \texttt{end}, parentheses, and square brackets. Some of these are delimiters. Whitespace is always ignored, except in strings. Square brackets are used for defining lists.

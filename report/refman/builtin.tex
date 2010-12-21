@@ -1,0 +1,120 @@
+
+\section{Built-in Functions}
+
+\subsection{Load Function}
+The \texttt{load} function is used to import external
+comma-separated-value team files (see CSV Specification for csv format
+and specification) into \texttt{team} objects in a file. The syntax
+is:
+
+\begin{verbatim}
+load(string);
+\end{verbatim}
+Example: 
+\begin{verbatim}
+team Astros = load("Astros.team");
+\end{verbatim}
+
+\subsection{Rand Function}
+The rand function is used to generate a random (float) number between
+two given arguments. The syntax is:
+
+\begin{verbatim}
+rand(number, number);
+\end{verbatim}
+Example: 
+\begin{verbatim}
+number randomNum = rand(0,1);
+\end{verbatim}
+
+\subsection{Max Function}
+The max function is used to determine the largest of two given
+arguments. The syntax is:
+
+\begin{verbatim}
+max(number, number);
+\end{verbatim}
+Example: 
+\begin{verbatim}
+number larger = max(5,100); // 100
+\end{verbatim}
+ 
+\subsection{Min Function}
+The min function is used to determine the smallest of two given arguments. The syntax is:
+
+\begin{verbatim}
+min(number, number);
+\end{verbatim}
+Example: 
+\begin{verbatim}
+number larger = min(5,100); // 5
+\end{verbatim}
+
+\subsection{Top Players Function}
+The top function is used to generate a sublist of players representing
+the top players in that list with respect to the stat. The syntax is:
+
+\begin{verbatim}
+topPlayers(number, list, player stat);
+\end{verbatim}
+Example: 
+\begin{verbatim}
+list of player top5b = topPlayers(5, Braves, AVG);
+\end{verbatim}
+
+\subsection{Top Teams Function}
+The \texttt{topTeams} function is used to generate a sublist of teams
+representing the top teams in that list with respect to the stat. The
+list is sorted with teams having the biggest tested stat values
+first. The syntax is:
+
+\begin{verbatim}
+topTeams(number, list, team stat);
+\end{verbatim}
+Example: 
+\begin{verbatim}
+list of team top5t = topTeams(5, [Braves, Dodgers, Orioles], W);
+\end{verbatim}
+
+\subsection{Bottom Functions}
+The \texttt{bottom} functions are counterparts to the \texttt{top}
+functions. Instead of descending sort, the resulting list is sorted
+least stat value first.
+
+\begin{verbatim}
+list of player bot5a = bottomPlayers(5, Braves, AVG);
+list of team bot5b = bottomTeams(5, [Braves, Dodgers, Orioles], W);
+\end{verbatim}
+
+\subsection{IsValid Function}
+The \texttt{isValid} function is used to determine whether a
+\texttt{from} expression returns a value successfully. When the
+argument is what \texttt{from} returns in failure, \texttt{isValid}
+returns \texttt{false}. Otherwise, it returns \texttt{true}.
+
+\begin{verbatim}
+isValid(any type);
+\end{verbatim}
+Example: 
+\begin{verbatim}
+isValid("a" from string[]); // false;
+isValid(3 from number[]); // false;
+isValid(-3 from [2, 4, 5, 1]); // false;
+isValid(5 from [2, 4, 5, 1]); // true;
+isValid(dodgers from [dodgers, astros, reds, yankees]); // true;
+\end{verbatim}
+
+\subsection{Sim Function}
+The \texttt{sim} function is BALL's main function. When this function
+is called, it takes the activated (see section
+\ref{ref_stmt_activate}) simfunction (see section
+\ref{ref_stmt_simdef}) and runs it on the two teams a number of
+times. The team that gets returned is the team that has the larger
+number of wins. The syntax is:
+\begin{verbatim}
+sim(team,team,number);
+\end{verbatim}
+Example: 
+\begin{verbatim}
+sim(Rockies,Giants,5); 
+\end{verbatim}

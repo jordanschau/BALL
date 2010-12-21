@@ -1,0 +1,20 @@
+/* This is the first comment */
+/*** This is the second comment ***/
+// This is the third comment */
+
+function myfun ( number p ) returns number :
+	print p;
+	return 10;
+end
+
+/*** This is the second comment ***/
+// This is the third comment */
+
+number global1;
+number global2 = 2, global3 = 3;
+string bleh = "playball!";
+//playball;	//not sure if this works...
+
+print myfun(33);
+
+print 5;

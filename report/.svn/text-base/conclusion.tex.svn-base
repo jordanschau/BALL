@@ -1,0 +1,96 @@
+\chapter{Conclusions}
+\section{Lessons Learned by Team Llamamelon and Advice for Future Teams}
+\subsection{Cipta Herwana, Project Manager}
+\begin{itemize}
+\item It's very important to keep documentation of the modules of the compiler at hand, and create them incrementally instead of creating them all after the source code is finished. Not only will the documentation better reflect the source code, but also less time will be wasted on the retracing steps.
+\item Time is very important. It's a good idea to leave some days for writing up the report and updating documentation without touching the source code at all. That way, if bugs or inconsistencies with the documentation are found in the language design, there will be extra time to repair them. Similarly, it's important to do intermediate code reviews before the coding is done, for the same reasons.
+\item Also on the issue of time, perhaps more important than starting early is having a clear idea of deadlines and how much time remains for each deadline. This is especially important for the project manager position, to ensure that each member of the team accomplishes their goals in a timely manner so that deadlines are met with time to spare for review.
+\end{itemize}
+\subsection{Daniel Lasry, Language Guru}
+\begin{itemize}
+\item My Java skills expanded noticeably, more so than in any other course before. Using an existing language to create a new one has definitely made me a better programmer, improving my coding skills such as commenting, optimizing, and reusing code.
+\item Before working on BALL, I knew finite automata, context-free grammars, and regular expressions as a theoretical construct and had no idea when I would use them in reality. Working on this project made me understand computer science theory and its real-life applications much more.
+\item Most of all, working on BALL was a great way to learn how to use tools such as SVN to work simultaneously on a single project. Each team member was able to branch off and work on their own part, merging to the trunk frequently to maintain the collaborative effort of each part of BALL. I learned a lot more about SVN than I knew before, including merging, differentiating, branching, reverting and resolving.
+\end {itemize}
+\subsection{Nathan Miller, System Architect}
+\begin{itemize}
+\item I personally love reflecting on projects to see how much I learned not only on the topic of the project itself but tangentially as well. Creating BALL enabled me to learn a lot of tools that are very exciting and interesting. These include the obvious tools like lex and yacc, but also ant, LaTeX (which I will definitely use in the future for every document I ever create), and much more.
+\item In the past, teams of which I've been a part have been more like ``squads'' of people working separate of each other toward a common goal. One important thing I learned from BALL is that it's a lot better to be a cohesive group, working as one unit with smaller side coding but ultimately with everyone's fingerprints on every unit of code. 
+\item Meetings are very important. It's crucial to meet with your team
+  as often as possible, not only to accomplish the tasks, but to bond
+  and make connections as a team. I think team connections are very
+  important and here are some of the things I learned on this: Cipta
+  is from Jakarta, Daniel modifies Nerf guns, Jordan has a motorcycle
+  license, and Sam is 1/8th Chinese.
+\end{itemize}
+\subsection{Sam Lee, System Integrator}
+\begin{itemize}
+\item Perhaps the most important thing that I learned is the importance of communication. It is very important to get every team member's point of view on every issue to get as many perspectives as possible. This eliminates many unforeseen problems that otherwise could derail the whole project.
+\item Time management is also very important, and I learned the importance of getting a head start on large projects such as BALL in order to have steady and constant progress. Otherwise, ridiculously long meetings will happen later, causing progress to be crunched and rushed.
+\item I also learned a lot about collaborative work including versioning control. Before BALL, I had very little experience with Subversion, and knew almost nothing coming into this project. Now, I have a lot more knowledge about SVN and versioning control.
+\end{itemize}
+\subsection{Jordan Schau, Tester/Validator}
+\begin{itemize}
+\item By far the most important thing I learned is the value of meeting and communication. Throughout the course of our work, our team had several long weekend meetings in which we accomplished quite a bit. Initially we were unenthusiastic about frequent meetings, but once regular meetings became commonplace, we were much more successful.
+\item It is extremely important to begin working as early as possible. I cannot stress this enough. A far-off due date does not mean that it's okay to take a break, but rather that regular, steady progress should be made in order to accomplish larger goals. It was only in our last few sections that we took advantage of the time given.
+\item Similarly, productivity can be a tricky thing. Generally, we were more productive as a group than by ourselves; that is, the whole is greater than the sum of its parts. I also learned that shorter, frequent meetings are more effective than infrequent marathon-length meetings.
+\end{itemize}
+\subsection{Team Llamamelon}
+\begin{itemize}
+\item Team roles should not be strictly kept.  If someone can help out
+  in another area, it is extremely helpful.  Often times one of us
+  would be stuck on a bug or busy and just as often a team member
+  would step up and help out. Having a second, third, fourth, or even
+  fifth pair of eyes looking at the same issue ensured that things
+  went extremely smoothly.  Not only did this help us accomplish more
+  in a short period of time but it also allowed every one of us to
+  learn more about all aspects of the language and compiler.
+\item It's also very important to ensure that every member of the team
+  understands and is up to date on any changes. If a team member has
+  to catch up on changes, this takes more time and effort than if they
+  had been aware of the changes in the first place. On the other hand,
+  if the whole team is up to date on the source, bugs will be solved
+  and ideas will be innovated.
+\item Sometimes the ideas that seem to be the best (like making BALL a
+  scripting language) turn out to not be so great, but what they morph
+  into (like the BALL we ended up with), if you stay dedicated, become
+  infinitely more awesome, more beautiful than the original ideas!
+\item We all learned quite a bit about teamwork. We would not have
+  finished on time if it weren't for the amount of work and dedication
+  that everyone put into the project equally and simultaneously.
+\item Designing and presenting a professional project is an impressive
+  and difficult thing to do. BALL is by far the largest project on
+  which any of us have worked. But cooperation, placing value on
+  production and cleanliness, and good organization make everything
+  more efficient and easy!
+\end{itemize}
+
+\section{Suggestions for Professor Aho}
+\subsection{Add}
+The most helpful thing that could be added to the class would be live
+demonstration of tools. If yacc/lex were demonstrated in class using
+the projector, we would have had a much stronger understanding of
+these tools, leading to more time spent developing our language and
+less time teaching ourselves the fundamentals.
+\subsection{Drop}
+By far the most stressful and unnecessary part of this course is the
+final exam. Because of the time-consuming nature of the final project,
+none of us had a chance to fully prepare for the exam. Furthermore, it
+seems to be completely unnecessary when added to the midterm, two
+homework assignments, and the project. We believe the project should
+be the primary focus of the class, and any other assignment should be
+secondary.
+\subsection{Change}
+The guest lecturers were very helpful in understanding the development
+of real-world languages. In addition, they were very fun and
+interesting. Bjarne Stroustrup was particularly interesting, and it
+would be really cool for future classes if they could also hear from
+other visionaries in this field.
+
+\pagebreak
+\section{The Team}
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.75]{lm.jpg}
+\caption{Team Llamamelon, 2009}\label{llamamelon}
+\end{figure}

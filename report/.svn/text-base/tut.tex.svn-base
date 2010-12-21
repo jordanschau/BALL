@@ -1,0 +1,293 @@
+
+\chapter{Language Tutorial}\label{tutorial}
+\section{Preamble}
+In this section, we will present a series of programs that demonstrate the features of the programming language BALL. By reading this language tutorial, the user should have sufficient knowledge of the various functions the BALL language provides. BALL is a concise language inspired by Java and the game of baseball. If the user is familiar with both baseball and extremely basic programming concepts, the language should be relatively easy to learn and master.
+
+This tutorial will show the user how to simulate games and even create their own simulation function. It will also show the user how to make basic programs that simply print stats of teams or players. With an understanding of how to write the following example programs, writing more complex programs should be easy for the average user.
+
+\section{Hello World}
+\subsection{Program Construction}
+Like all other languages, the first program to learn is a simple printing program. While most languages use the phrase ``hello world,'' the first program in BALL will print ``play ball.'' The program will look like the following:
+\begin{quotation}
+ \texttt{print "play ball!";}
+\end{quotation}
+
+\subsection{Basic Compilation}
+BALL is compiled and run in one simple step.  In your environment, simply type the following:
+\begin{verbatim}
+        $ BALL hello.ball
+\end{verbatim}
+The output will be the expect output of the BALL program:
+\begin{verbatim}
+        play ball!
+\end{verbatim}
+
+\section{Simulation Hello World}
+Let's now look at a more complex program. The following program shows how to define a new sim function and then use it in simulating games.
+\subsection{A Simple BALL Program}
+\begin{verbatim}
+/* a simple simulation function */ 
+simfunction simpleSim is:             // Declaring function with 'is'
+    if (team1's W > team2's W) then:  // If-Then Construct
+        return team1;                 // Return a team
+    else:                             // Else Construct
+        return team2;                 // Return a team
+    end                               // Ends if statement
+end                                   // Ends simfunction
+
+activate simpleSim;                   // Activates sim function
+team Indians = load("Indians.team");  // Loads Team file
+team Orioles = load("Orioles.team");  // Loads Team file
+print "Winner: " + sim(Indians, Orioles, 1); // Prints result
+\end{verbatim}
+This application can be considered as a program in three parts. Part 1 is the definition of the simulation function. Part 2 is the activation of said simulation function and part 3 is the printing and evaluation section.
+Part 1 of the program starts with a comment. In ball comments are defined by the leading \texttt{//}. Any characters between the \texttt{//} and the next line are ignored by the compiler. Similarly \texttt{/* */ }defines comments but \texttt{/* */} allows the user to have comments that span multiple lines. Comments can appear anywhere a blank or tab or newline can. The next line of the program defines a simulation function naming it \texttt{simpleSim}. The function takes two parameters of type team. In the BALL language, the simulation function takes two teams as parameters and returns the winning team. In the same line, \texttt{is:} is used like \texttt{\{} is used in other programming languages but the keyword \texttt{is} is used only following the simulation function.
+
+\subsection{Conditionals}
+The next line uses a conditional statement called \texttt{if}. The if statement is a construct used in most programming languages, and in BALL it behaves the same as it does in C or Java. It evaluates the statement within the parentheses and based on its return value it executes either the following lines before the \texttt{else:}, or the lines following the \texttt{else:}. In this case, it either returns the first team, \texttt{team1} or the second one, \texttt{team2}. \texttt{team1} and \texttt{team2} are implicit definitions automatically understood by the compiler when inside of a simfunction declaration. They do not need to be explicitly defined.
+Part 2 of this program uses the reserved keyword \texttt{activate} to tell the compiler which simulation function to use.
+Lastly, the third part of this program creates two teams named Indians and Orioles. For each team, it calls the function \texttt{load} which uses a file specified by the user in string format. Lastly the program prints the winner of the simulation preceded by the string "Winner: ".
+
+\subsection{Team Files}
+The files that \texttt{load} uses are of the following format:
+\begin{verbatim}
+        Team Name: Houston Astros
+        Header:W,L
+        74,88
+
+        Type:Batter 
+        Header:Name,AB,R,H,2B,3B,HR,BB 
+        Ivan Rodriguez,327,41,82,15,2,8,13
+        Lance Berkman,460,73,126,31,1,25,97
+        Kazuo Matsui,476,56,119,20,2,9,34
+        Miguel Tejada,635,83,199,46,1,14,19
+        Geoff Blum,381,34,94,14,1,10,33
+        Carlos Lee,610,65,183,35,1,26,41
+        Michael Bourn,606,97,173,27,12,3,63
+        Hunter Pence,585,76,165,26,5,25,58 
+        Wandy Rodriguez,63,4,8,3,0,0,1
+        Roy Oswalt,49,4,6,0,0,0,2
+        Brian Moehler,42,0,1,0,0,0,1
+        Mike Hampton,37,6,12,1,0,1,2
+        Russ Ortiz,28,2,5,0,0,1,1
+        Felipe Paulino,25,0,1,0,0,0,0
+        
+        Type:Pitcher 
+        Header:Name,IP,H,ER,HR,BB,K,BF
+        Wandy Rodriguez,205.2,192,69,21,63,193,849
+        Roy Oswalt,181.1,183,83,19,42,138,757
+        Brian Moehler,154.2,187,94,21,51,91,694
+        Mike Hampton,112.0,128,66,13,46,74,494
+        Felipe Paulino,97.2,126,68,20,37,93,448
+        Russ Ortiz,85.2,95,53,8,48,65,387
+\end{verbatim}
+Essentially, the file is composed of comma separated values named by the tags \texttt{header} and \texttt{type}. So in this case, the first line specifies the name of the team. It then specifies the team-wide stats \texttt{W} and \texttt{L}. The next section is tagged by Header and names what each of the values defined in the following lines are, in this case, \texttt{Name,AB,R,H,2B,3B,HR,BB}. All "\texttt{.team}" files must be of this special format.
+
+\subsection{Calling \texttt{sim}}
+\texttt{sim} is a function that takes three arguments: two teams and a number. \texttt{sim} then returns a team based on the calculations done. Though the sim can only take teams and a number, because it returns a team it can also take nested sim functions. That functionality will be discussed in the following sections.
+
+\section{A More Complex Simulation}
+\subsection{Simulation Example}
+This section will examine a more complex simulation. In the following program, the user defines stats based on given stats defined in the \texttt{.team} file. Furthermore, the program defines functions that will be used in the new simulation function. It then computes the simulation. This will be a good model of an accurate simulation function.
+
+\begin{verbatim}
+/***STATS DEFINITION***/ 
+/*Batter probabilities*/ 
+stat AVG = H / AB;     // Creates a new AVG stat
+stat PA = AB + BB;     
+stat bWalk = BB / PA;
+stat bSingle = (H - (2B + 3B + HR))/ PA;
+stat bDouble = 2B / PA;
+stat bTriple = 3B / PA;
+stat bHR = HR / PA;
+
+/*Pitcher probabilities*/ 
+stat pWalk = BB / BF;
+stat pDouble = H * .174 / BF;
+stat pTriple = H * .024 / BF;
+stat pHR = HR / BF;
+stat pSingle = (H / BF) - pHR - pTriple - pDouble;
+
+/***END STATS DEFINITION***/
+
+/*Global variables that hold combined probabilities 
+    given a pitcher and a batter*/
+number probWalk = 0; 
+number probSingle = 0;
+number probDouble = 0; 
+number probTriple = 0; 
+number probHR = 0;
+
+/*This is a general-purpose function that calculates combined 
+    probabilities given a pitcher and a batter. It takes the
+    max of both: average is not a good estimate.*/
+    
+function combineProb (player batter, player pitcher) 
+        returns nothing:
+    probWalk = max(pitcher's pWalk, batter's bWalk);
+    probSingle = max(pitcher's pSingle, batter's bSingle);
+    probDouble = max(pitcher's pDouble, batter's bDouble);
+    probTriple = max(pitcher's pTriple, batter's bTriple);
+    probHR = max(pitcher's pHR, batter's bHR);
+end
+
+/*General Purpose function that takes the values generated by 
+    combineProb and randomizes them (gives them 10% 
+    of randomness) for more realistic results*/
+    
+function randomizeProbabilities() returns nothing:
+    probWalk = rand(probWalk - probWalk*.1, probWalk 
+        + probWalk*.1);
+    probSingle = rand(probSingle - probSingle*.1, probSingle 
+        + probSingle*.1);
+    probDouble = rand(probDouble - probDouble*.1, probDouble 
+        + probDouble*.1);
+    probTriple = rand(probTriple - probTriple*.1, probTriple 
+        + probTriple*.1);
+    probHR = rand(probHR - probHR*.1, probHR + probHR*.1);
+end
+
+/*BASIC SIMULATION FUNCTION*/ 
+simfunction basicSimulation is:
+    number team1Score = 0; 
+    number team2Score = 0;
+/*Note: team1 and team2 are global 
+    variables that represent the teams that the 
+    sim function is currently working with. 
+    The sim function sets them automatically.*/
+    
+/*team1 is batting and team2 is pitching! (5 times)*/ 
+do 5 times:
+/*Select random players from the best 9 of each team*/ 
+    list of player bestBatters = topPlayers(9, team1's BATTERS, AVG); 
+    player batter = any bestBatters;
+    list of player bestPitchers = topPlayers(4, team2's PITCHERS, AVG); 
+    player pitcher = any bestPitchers;
+    
+/*Set the global probabilities of this inning*/ 
+combineProb(batter, pitcher);
+
+/*Add a little randomness*/
+    randomizeProbabilities();
+    team1Score += probWalk*(1/4) + probSingle*(1/4) 
+        + probDouble*(2/4) + probTriple*(3/4) + probHR;
+end
+
+/*team2 is batting and team1 is pitching! (5 times)*/
+do 5 times:
+    bestBatters = topPlayers(9, team2's BATTERS, AVG);
+    batter = any bestBatters;
+
+    bestPitchers = topPlayers(4, team1's PITCHERS, AVG);
+    pitcher = any bestPitchers;
+ 
+    combineProb(batter, pitcher);
+    randomizeProbabilities();
+
+    team2Score += probWalk*(1/4) + probSingle*(1/4) 
+        + probDouble*(2/4) + probTriple*(3/4) + probHR;
+end
+
+if (team1Score > team2Score) then:
+    print team1's name + " defeat " + team2's name + "!!";
+    return team1;
+else:
+    print team2's name + " defeat "  + team1's name + "!!";
+    return team2;
+    end
+end
+/*END SIMULATION FUNCTION*/
+
+activate basicSimulation;
+
+team Astros = load("Astros.team");
+team Dodgers = load("Dodgers.team");
+team Orioles = load("Orioles.team");
+team Twins = load("Twins.team");
+
+team winner = sim( sim(Astros, Dodgers, 3), 
+    sim(Orioles, Twins, 3), 3);
+print winner's name + " have won the World Series!!\n";
+
+print winner's name + " has the players:";
+foreach p in winner's PLAYERS:
+    print p's name;
+end
+\end{verbatim}
+ \subsection{Basic Definitions}
+The first part of this program labeled "Stats Definition" in the comments does just that. It creates new stats which are all based on some combination of stats defined in the \texttt{.team} files. If a stat being created references a stat that is not defined in either the program or the \texttt{.team} file an error will be thrown.
+
+The next section declares global variables that can be accessed by all functions in the program. In BALL all variables must be declared before they are used. This is done before the beginning of a function or executable statements. Any declaration consists of a type name and a list of variables. In the case of this program it is only declaring one variable at a time, but the section:
+
+\begin{verbatim}
+    number probWalk = 0;
+    number probSingle = 0;
+    number probDouble = 0;
+\end{verbatim}
+could be rewritten as:
+\begin{verbatim}
+    number probWalk = 0, probSingle = 0, probDouble = 0;
+\end{verbatim}
+
+The type, \texttt{number}, tells the compiler that the following variables listed are of that type. Furthermore, it assigns the given value specified by the equals operator.  This is similar to nearly every common imperative programming language.
+ 
+The basic simulation function is the key to all programs created in BALL. In this case, the simulation function acts as though the game is simply a matchup of a pitcher versus a batter and the batters are matchups at random. Furthermore, it simplifies scoring to be a summation of the hits values (where singles and walks are worth 1/4, doubles are worth 1/2, triples are worth 3/4 and homeruns are worth 1). 
+ 
+ \subsection{Defining Functions}
+The user-defined function \texttt{combineProb} is called taking two arguments, in this case players. 
+\begin{verbatim}
+    combineProb(batter, pitcher);
+\end{verbatim} 
+Before a function is called in BALL, it must have already been defined - similar to C. Unlike C, however, functions cannot be predeclared with headers.  The purpose of this is to avoid complicated scope issues. The function is defined in the file as the following:
+\begin{verbatim}
+function combineProb (player batter, player pitcher) 
+        returns nothing:
+    probWalk = max(pitcher's pWalk, batter's bWalk);
+    probSingle = max(pitcher's pSingle, batter's bSingle);
+    probDouble = max(pitcher's pDouble, batter's bDouble);
+    probTriple = max(pitcher's pTriple, batter's bTriple);
+    probHR = max(pitcher's pHR, batter's bHR);
+end
+\end{verbatim}
+
+The first line defines the function which in this case takes two parameters and "returns nothing." In BALL, all function definitions must be of the following form:
+	
+	\texttt{function} name \texttt{(arg1, arg2, ...)} \texttt{returns} type :
+	
+	
+In the case of \texttt{combineProb} there are two parameters and nothing to return. In BALL, nothing is a keyword that maps to Java's void. In \texttt{combineProb} the function \texttt{max} is called. \texttt{max} is a built-in function that takes two parameters of type number and returns the higher number. Likewise, \texttt{min} has similar functionality except it returns the smaller of the two numbers. In \texttt{combineProb} the global variables defined at the beginning of the program are all modified. After calling the functions, the program then compares the values \texttt{team1Score} and \texttt{team2Score} and prints the name of the team associated with the higher value as the winner.
+ 
+\subsection{Do Loops} 
+The next section of this program is the simFunction. In this function the do loop is introduced. It is a generalization of Java's \texttt{while} loop. In BALL the \texttt{do} loop will execute the code following it (until it reaches the \texttt{end} associated with that loop) the amount of times specified by the number immediately following the keyword \texttt{do} preceding the keyword \texttt{times}. As with Java's \texttt{while} loop, the body of the loop could be a single line or an arbitrarily long block of code enclosed by the \texttt{:} \texttt{end} constructs (similar to Java's "\texttt{\{}" "\texttt{\}}" ). However, the do loop can be programmatically aborted by calling the keyword \texttt{stopdo;} which exits the loop and continues with the next block of code. This is similar to Java's \texttt{break;} command.
+
+\subsection{Lists}
+Next, the program creates a \texttt{list} of players, in this case the list composed of the sublist created by calling \texttt{topPlayers}, which is a built-in function, similar to \texttt{max} above, that takes three parameters: a number that will be the number of items in the list, a list from which to choose elements, and a stat to define which elements are chosen. The built-in function \texttt{topTeams} works similarly on a list of teams.
+\begin{verbatim}
+    list of player bestBatters = topPlayers(9, team1's BATTERS, AVG);
+    player batter = any bestBatters;
+\end{verbatim} 
+
+These two lines set the \texttt{batter} to any batter in the list of batters. In this case, \texttt{any} is a keyword that selects a random item from a list. 
+
+
+\subsection{Calling \texttt{sim}}
+Before calling the simfunction, it is essential that the user-defined function has been activated. So the program calls:
+\begin{verbatim}
+    activate basicSimulation;
+\end{verbatim}
+which tells the program which simfunction to use. Only after defining an active simulation function can the simfunction be called. Furthermore, sim calls can be nested like the following:
+\begin{verbatim}
+    team winner = sim( sim(Astros, Dodgers, 3), 
+        sim(Orioles, Twins, 3), 3);
+\end{verbatim}
+That will return the winner of a simulation between the winners of two different match-ups.
+
+\section{Conclusion}
+The tutorial has now covered the core of BALL's functionality. With the building blocks provided, the user can create interesting stats which can be used in innovative simulation functions. It is now possible for the user to write long and interesting programs that use user-defined stats and simulations to output information of value. The following exercises suggest BALL programs of greater complexity than the ones described earlier. For more information, consult the Language Reference Manual or your local BALL expert.
+
+\section{Exercises}
+\begin{description}
+\item[Exercise 2.6.1] Write a program that uses more than one simulation function and prints the winners of a 5 game series based on each sim function. 
+\item[Exercise 2.6.2] Write a program that takes the simulation functions defined either by the previous program or the tutorial and simulate an entire season of any given team. Compare the results to the actual seasonal results.
+\item[Exercise 2.6.3] Write a program that simulates an entire season for all teams and then selects the top 8 teams and simulates Playoffs and World Series, returning the winner of the entire season, and congratulating them on their victory.
+\end{description}

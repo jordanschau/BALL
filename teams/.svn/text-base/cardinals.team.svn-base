@@ -1,0 +1,30 @@
+Team Name:Washington Nationals
+Header:W,L
+91,71
+
+Type:Batter
+Header:Name,AB,R,H,2B,3B,HR,BB
+Yadier Molina,481,45,141,23,1,6,50
+Albert Pujols,568,124,186,45,1,47,115
+Skip Schumaker,532,85,161,34,1,4,52
+Brendan Ryan,390,55,114,19,7,3,24
+Mark DeRosa,237,31,54,10,1,10,18
+Matt Holliday,235,42,83,16,2,13,26
+Colby Rasmus,474,72,119,22,2,16,36
+Ryan Ludwick,486,63,129,20,1,22,41
+Adam Wainwright,89,7,16,5,1,2,1
+Joel Pineiro,66,4,9,2,0,0,4
+Chris Carpenter,63,3,11,3,0,1,2
+Todd Wellemeyer,39,1,5,0,0,0,0
+Kyle Lohse,37,3,8,0,0,0,1
+
+
+Type:Pitcher
+Header:Name,IP,H,ER,HR,BB,K,BF
+Adam Wainwright,233.0,216,68,17,66,212,970
+Joel Pineiro,214.0,218,83,11,27,105,865
+Chris Carpenter,192.2,156,48,7,38,144,750
+Todd Wellemeyer,122.1,160,80,19,57,78,561
+Kyle Lohse,117.2,125,62,16,36,77,512
+
+

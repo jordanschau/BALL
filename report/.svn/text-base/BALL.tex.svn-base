@@ -1,0 +1,294 @@
+%% Based on a TeXnicCenter-Template by Tino Weinkauf.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[letterpaper,oneside,12pt, pdftex]{report}
+% Alternative Options:
+%	Paper Size: a4paper / a5paper / b5paper / letterpaper / legalpaper / executivepaper
+% Duplex: oneside / twoside
+% Base Font Size: 10pt / 11pt / 12pt
+
+
+%% Language %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[USenglish]{babel} %francais, polish, spanish, ...
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+
+ \usepackage{listings}
+  \usepackage{courier}
+ \lstset{
+         basicstyle=\footnotesize\ttfamily, % Standardschrift
+         numbers=left,               % Ort der Zeilennummern
+         numberstyle=\tiny,          % Stil der Zeilennummern
+         stepnumber=1,               % Abstand zwischen den Zeilennummern
+         numbersep=5pt,              % Abstand der Nummern zum Text
+         tabsize=2,                  % Groesse von Tabs
+         extendedchars=true,         %
+         breaklines=true,            % Zeilen werden Umgebrochen
+         keywordstyle=\color{red},
+         frame=b,         
+ %        keywordstyle=[1]\textbf,    % Stil der Keywords
+ %        keywordstyle=[2]\textbf,    %
+ %        keywordstyle=[3]\textbf,    %
+ %        keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} %
+         stringstyle=\color{white}\ttfamily, % Farbe der String
+         showspaces=false,           % Leerzeichen anzeigen ?
+         showtabs=false,             % Tabs anzeigen ?
+         xleftmargin=17pt,
+         framexleftmargin=17pt,
+         framexrightmargin=5pt,
+         framexbottommargin=4pt,
+         %backgroundcolor=\color{lightgray},
+         showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
+ }
+ \lstloadlanguages{% Check Dokumentation for further languages ...
+         %[Visual]Basic
+         %Pascal
+         %C
+         %C++
+         %XML
+         %HTML
+         Java
+ }
+    %\DeclareCaptionFont{blue}{\color{blue}} 
+
+  %\captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
+ 
+\usepackage{lmodern} %Type1-font for non-english texts and characters
+
+%% Packages for Graphics & Figures %%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx} %%For loading graphic files
+%\usepackage{subfig} %%Subfigures inside a figure
+%\usepackage{tikz} %%Generate vector graphics from within LaTeX
+
+%% Please note:
+%% Images can be included using \includegraphics{filename}
+%% resp. using the dialog in the Insert menu.
+%% 
+%% The mode "LaTeX => PDF" allows the following formats:
+%%   .jpg  .png  .pdf  .mps
+%% 
+%% The modes "LaTeX => DVI", "LaTeX => PS" und "LaTeX => PS => PDF"
+%% allow the following formats:
+%%   .eps  .ps  .bmp  .pict  .pntg
+
+
+%% Math Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+
+%% Line Spacing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{setspace}
+%\singlespacing        %% 1-spacing (default)
+\onehalfspacing       %% 1,5-spacing
+%\doublespacing        %% 2-spacing
+
+
+%% Other Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{a4wide} %%Smaller margins = more text per page.
+\usepackage{fancyhdr} %%Fancy headings
+%\usepackage{longtable} %%For tables, that exceed one page
+
+
+%%%%%%%%%%
+% LINK STUFF - NEEDS A FIXIN
+%
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=black,%
+    urlcolor=black
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Remarks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% TODO:
+% 1. Edit the used packages and their options (see above).
+% 2. If you want, add a BibTeX-File to the project
+%    (e.g., 'literature.bib').
+% 3. Happy TeXing!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Options / Modifications
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{BallOption.tex} %You need a file 'options.tex' for this
+%% ==> TeXnicCenter supplies some possible option files
+%% ==> with its templates (File | New from Template...).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pagestyle{empty} %No headings for the first pages.
+
+
+%% Title Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ==> Write your text here or include other files.
+
+%% The simple version:
+%\title{BALL: Basic Athletic Logic Language}
+%\author{Team Llamamelon}
+%\date{} %%If commented, the current date is used.
+%\maketitle
+
+%% The nice version:
+\input{BallTitle.tex} %%You need a file 'titlepage.tex' for this.
+%% ==> TeXnicCenter supplies a possible titlepage file
+%% ==> with its templates (File | New from Template...).
+
+
+%% Inhaltsverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents %Table of contents
+\cleardoublepage %The first chapter should start on an odd page.
+
+\pagestyle{fancy} %Now display headings: headings / fancy / ...
+
+% label, caption, filename
+\newcommand{\codelisting}[3]
+{
+  \begin{singlespace}
+  \lstinputlisting[label=#1,caption=#2]{#3}
+  \end{singlespace}
+}
+
+
+
+%% Chapters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ==> Write your text here or include other files.
+
+%\input{intro} %You need a file 'intro.tex' for this.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ==> Some hints are following:
+
+\include{preamble}
+
+\include{tut}
+
+\include{refman}
+
+\include{projplan}
+
+\include{lang_evo}\label{evolution}
+
+\chapter{Translator Architecture}\label{architecture}
+
+\section{Architectural Block Diagram}
+Figure \ref{blockdiagram} shows the Architectural Block Diagram of the
+BALL compiler. This compiler and its structures are further explained
+in Section \ref{interfaces} below.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.46]{blocks_scaled.png}
+  \caption{Architectural Block Diagram}
+  \label{blockdiagram}
+\end{figure}
+
+
+\section{Interfaces between Compiler Modules}\label{interfaces}
+The BALL compiler's modules can be grouped into five major steps, as
+enumerated below. Reference Figure \ref{blockdiagram} for a visual
+representation of the interface.
+\begin{enumerate}
+\item First, the lexer traverses the BALL source program to be
+  compiled. The lexer gathers all of the tokens, passing them to the
+  parser in the same sequence. The lexer acts in a left-to-right
+  method.
+\item The parser then parses the sequence according to the grammar,
+  matching statements. It creates a rightmost derivation, and thus
+  BALL is a LR(1) language. As the parsing goes on, and the parser
+  finds matches in the grammar, it adds identifiers (variables and
+  functions) to the symbol table.
+\item The parser outputs a syntax tree containing nodes for each
+  action (actions include print statements, assignment statements,
+  expressions, etc.) Every statement has a node in the syntax tree.
+\item Each node generates its own Java code equivalent, checking the
+  symbol table at compilation to ensure conflicts or incorrect
+  declarations or calls do not exist within the code.
+\item The Java code is compile by the Java compiler into bytecode. The
+  Java Virtual Machine then runs this compiled bytecode as well as the
+  libraries supplied in the Java backend runtime classes. These
+  libraries enable BALL's syntax simplicity.
+\end{enumerate}
+\section{Architecture Work Distribution}
+Ultimately, as was the case for all of BALL's development, work was
+divided evenly, and each member contributed massively to the completed
+project by being involved in every part of the process. For example,
+intermediate code generation from the syntax tree was written for
+different language constructs by different members of the
+team. Similarly the parser and symbol table were adapted based on
+which section of code a particular team member worked on at a
+particular time. Often, team members worked together to solve one
+particular part of the language. Thus, each module in BALL is truly a
+team effort, as no particular module can be traced to one individual
+person.
+
+BALL is the ultimate baseball language. Just as baseball is a team
+sport, BALL is a team-created language.
+
+\include{softwaredev}
+
+\include{testplan}
+
+\include{conclusion}
+
+%% <== End of hints
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\chapter{Source Code}
+\input{source.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BIBLIOGRAPHY AND OTHER LISTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% A small distance to the other stuff in the table of contents (toc)
+\addtocontents{toc}{\protect\vspace*{\baselineskip}}
+
+%% The Bibliography
+%% ==> You need a file 'literature.bib' for this.
+%% ==> You need to run BibTeX for this (Project | Properties... | Uses BibTeX)
+%\addcontentsline{toc}{chapter}{Bibliography} %'Bibliography' into toc
+%\nocite{*} %Even non-cited BibTeX-Entries will be shown.
+%\bibliographystyle{alpha} %Style of Bibliography: plain / apalike / amsalpha / ...
+%\bibliography{literature} %You need a file 'literature.bib' for this.
+
+%% The List of Figures
+\clearpage
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+%% The List of Tables
+\clearpage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% APPENDICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+%% ==> Write your text here or include other files.
+
+%\input{FileName} %You need a file 'FileName.tex' for this.
+
+
+\end{document}
+

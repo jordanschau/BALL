@@ -1,0 +1,27 @@
+Team Name:Philadelphia Phillies
+Header:W,L
+93,69
+
+Type:Batter
+Header:Name,AB,R,H,2B,3B,HR,BB
+Carlos Ruiz,322,32,82,26,1,9,47
+Ryan Howard,616,105,172,37,4,45,75
+Chase Utley,571,112,161,28,4,31,88
+Jimmy Rollins,672,100,168,43,5,21,44
+Pedro Feliz,580,62,154,30,2,12,35
+Raul Ibanez,500,93,136,32,3,34,56
+Shane Victorino,620,102,181,39,13,10,60
+Jayson Werth,571,98,153,26,1,36,91
+Joe Blanton,55,4,7,0,0,0,4
+Cole Hamels,61,6,9,3,0,0,1
+Jamie Moyer,42,2,5,0,0,0,6
+J.A. Happ,43,2,4,1,0,0,1
+Cliff Lee,33,2,7,2,0,0,0
+
+Type:Pitcher
+Header:Name,IP,H,ER,HR,BB,K,BF
+Joe Blanton,195.1,198,88,30,59,163,837
+Cole Hamels,193.2,206,93,24,43,168,814
+J.A. Happ,166.0,149,54,20,56,119,685
+Jamie Moyer,162.0,177,89,27,43,94,699
+Cliff Lee,79.2,80,30,7,10,74,328

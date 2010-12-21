@@ -1,0 +1,91 @@
+\chapter{Test Plan}\label{TestPlan}
+\section{Initial Testing Plan}
+As a group we all felt a test driven development was crucial to bug
+free code.  Test Driven Development in our case started with one line
+simple grammars and simple programs.  We then would introduce small
+additions to the grammar and write small programs to act as unit tests
+for said additions to the grammar.  
+
+\section{Example Test Code }
+The following is a code snippet
+from the unit testing program for arithmetic expressions:
+
+\begin{singlespacing}
+\begin{verbatim}
+
+/*
+ * Arithmetic Expr Test File
+ */
+
+number x, y, z;
+
+x = 0;//x = 0
+y = x + 1;//y=1
+z = x / 10;//z=0
+
+x = (z + 1) * 100; //x=100
+
+y = z % 5 + 1;//y=1
+
+1+2;//should get commented out in javacode
+x+y;
+
+function f1 () returns number:
+    x = 13;
+    return 15;
+end
+
+function f2() returns number:
+    y = x * 5 % 6;
+    return 2 + 4;
+end
+
+print f1() + 3;// 18
+print ``f2() = `` + f2();//6
+print ``x = `` + x;//13 BECAUSE ITS GLOBAL (WORLDLY)
+print ``y = `` + y;//5
+
+\end{verbatim}
+\end{singlespacing}
+
+In the code above, we extensively test arithmetic expressions.  For
+instance, we check all operators on all types.  While not shown above,
+testing was done intending to both successfully compile and break the
+code. [A successful break is when our intended breakpoint broke and
+  produced the intended error]  
+
+\section{Test Execution}
+More generally our development was very conducive to standard software
+development phasing.  Initially, each member created his own testbed
+where all new functionality underwent white-box and black-box testing.
+Our number one rule for testing was ``never break the trunk.''  To
+make sure the trunk was never broken when moving code from a sandbox
+testing environment to the trunk, we always made sure at least two
+people read the new code in full before importing.  Then after we
+compiled the updated source code, integration testing was done.  By
+doing this, we could ensure that all new components were fully
+functional with all the already existing components.  Furthermore, we
+could be sure that for the most part, no new bugs were introduced.
+Unfortunately, some bugs did slip through to the trunk but they were
+quickly squashed int the regression testing phase.  After the
+previously mentioned tests were successfully completed and the
+compiler was fully functional using the complete grammar, the
+regression testing phase began.  Below is the code used for the first
+phase of regression testing.  The code was built on initially defining
+a print statement.  It then evolved to a more complex print statement.
+After several more rounds of regression testing, the program evolved
+to the code below.  In it, we test all the constructs outlined in the
+reference manual.  It was in this phase that most of the smaller typos
+and bugs were found and fixed.  For example there was a type in the
+teamObj that referred to the attribute name and it should have been
+upper case.  Furthermore, each step was checked to see that the
+intended output was realized.  It is important to note that in this
+program, accuracy was not our goal.  Accuracy testing was done only on
+the more complex sim function outlined in the last part of the
+language tutorial.  In that function, we noticed very accurate
+predictions when testing over thousands of games.  The program output
+generally similar results with small perturbation to the actual number
+of wins and losses for each team.  
+
+The programs used in the testing phases can be found in the Code
+section.

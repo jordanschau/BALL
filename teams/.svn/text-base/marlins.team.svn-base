@@ -1,0 +1,30 @@
+Team Name:Florida Marlins
+Header:W,L
+87,75
+
+Type:Batter
+Header:Name,AB,R,H,2B,3B,HR,BB
+John Baker,373,59,101,25,0,9,41
+Jorge Cantu,585,67,169,42,0,16,47
+Dan Uggla,564,84,137,27,1,31,92
+Hanley Ramirez,576,101,197,42,1,24,61
+Emilio Bonifacio,461,72,116,11,6,1,34
+Chris Coghlan,504,84,162,31,6,9,53
+Cody Ross,559,73,151,37,1,24,34
+Jeremy Hermida,429,48,111,14,2,13,56
+Josh Johnson,62,8,12,1,0,3,6
+Ricky Nolasco,50,1,7,0,0,0,2
+Chris Volstad,47,5,6,1,0,0,1
+Sean West,31,2,2,1,0,0,0
+Anibal Sanchez,23,0,0,0,0,0,3
+Andrew Miller,24,0,2,0,0,0,0
+
+
+Type:Pitcher
+Header:Name,IP,H,ER,HR,BB,K,BF
+Josh Johnson,209.0,184,75,14,58,191,855
+Ricky Nolasco,185.0,188,104,23,44,195,785
+Chris Volstad,159.0,169,92,29,59,107,682
+Sean West,103.1,115,55,11,44,70,467
+Anibal Sanchez,86.0,84,37,10,46,71,383
+Andrew Miller,80.0,85,43,7,43,59,366

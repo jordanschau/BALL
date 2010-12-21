@@ -1,0 +1,14 @@
+/*
+ * OUTPUT
+ * ------
+ * 849 for 2009 season
+ */
+
+team ast = load("astros.team");
+list of player astpit = ast's PITCHERS;
+player wandy = "Wandy Rodriguez" from astpit;
+print wandy's name+" batters faced: "+wandy's BF;
+
+//BF STAT WORKS.
+
+

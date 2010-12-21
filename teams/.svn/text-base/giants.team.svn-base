@@ -1,0 +1,27 @@
+Team Name: San Francisco Giants
+Header:W,L
+88,74
+
+Type:Batter 
+Header:Name,AB,R,H,2B,3B,HR,BB 
+Bengie Molina,491,52,130,25,1,20,13
+Travis Ishikawa,326,49,85,10,2,9,30
+Emmanuel Burriss,202,18,48,6,0,0,14
+Edgar Renteria,460,50,115,19,1,5,39
+Pablo Sandoval,572,79,189,44,5,25,52
+Fred Lewis,295,49,76,21,3,4,36
+Aaron Rowand,499,61,130,30,2,15,30
+Randy Winn,538,65,141,33,5,2,47
+Tim Lincecum,66,8,10,1,0,0,6
+Matt Cain,60,2,9,2,1,0,4
+Barry Zito,51,2,6,0,0,0,4
+Jonathan Sanchez,41,2,3,0,0,0,4
+Randy Johnson,26,1,2,0,0,0,1
+
+Type:Pitcher 
+Header:Name,IP,H,ER,HR,BB,K,BF
+Tim Lincecum,225.1,168,62,10,68,261,905
+Matt Cain,217.2,184,70,22,73,171,886
+Barry Zito,192.0,179,86,21,81,154,818
+Jonathan Sanchez,163.1,135,77,19,88,177,710
+Randy Johnson,96.0,97,52,19,31,86,412

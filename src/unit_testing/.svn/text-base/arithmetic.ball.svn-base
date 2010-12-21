@@ -1,0 +1,71 @@
+/*
+ * Arithmetic Expr Test File
+ * 
+ *
+ *
+ */
+
+number x, y, z;
+
+x = 0;			//x = 0
+y = x + 1;		//y=1
+z = x / 10;		//z=0
+
+x = (z + 1) * 100; //x=100
+
+y = z % 5 + 1;			//y=1
+
+1+2;	//should get commented out in javacode
+x+y;
+
+function f1 () returns number:
+    x = 13;
+    return 15;
+end
+
+function f2() returns number:
+    y = x * 5 % 6;
+    return 2 + 4;
+end
+
+team dodgers = load("dodgers.team");
+print dodgers's teamname;
+print dodgers;
+
+// SHOULD BREAK
+/*
+	team dodgers = load("dodgers.team");
+	//y = x + dodgers;
+	team wild = dodgers;
+	wild = dodgers + dodgers;
+*/
+
+print "x = " + x;	//100
+print "y = " + y;	//1
+print "z = " + z;	//0
+print "y + z = " + (y + z); //1
+print "neg " + (-3 * 7); //-21
+
+(x is y);		//false but should be commented out in java source
+x isnot y;		//Commented out
+x > y;			//this too
+x < y;			//and this
+x >= y;			//and this
+x <= y;			//last one
+
+/********************************/
+/*	LOGIC TIME!	*/
+x > 3 and y < 2;
+x is 0 or y is 0 or (z+3) < 10;
+not x > 3;
+
+;;;;;;;;;;;; /* YIKES - But no problemo here */
+
+print f1() + 3;	// 18
+print "f2() = " + f2();	//6
+print "x = " + x;	//13 BECAUSE ITS GLOBAL (WORLDLY)	
+print "y = " + y;	//5
+
+//TEST COMPLETE
+//EVERYTHING WORKS
+

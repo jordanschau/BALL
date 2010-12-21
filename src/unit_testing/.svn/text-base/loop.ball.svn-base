@@ -1,0 +1,45 @@
+list of number l1 = [ 1, 2, 3 ];
+
+
+//print "";
+//print l1;
+
+number x;
+
+/*number x;
+x = rand(11,221);
+print x;*/
+
+string zz;
+do 10 times: 
+print l1;
+print "haha"; 
+print 5;
+end
+
+foreach y in l1:
+print "numbers are "+y;
+end
+
+//number str = 33;
+foreach str in [ "a", "b", "c", "e" ]:
+	print str;
+end
+//print str;
+
+/*string a;
+foreach str in a:
+print str;
+end*/
+
+
+number a = 0;
+do:
+print "loooooops";
+a++;
+if (a > 10) then:
+stopdo;
+end
+end
+
+

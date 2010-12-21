@@ -1,0 +1,28 @@
+Team Name:Florida Marlins
+Header:W,L
+86-76
+
+Type:Batter
+Header:Name,AB,R,H,2B,3B,HR,BB
+Brian McCann,488,63,137,35,1,21,49
+Casey Kotchman,298,28,84,20,0,6,32
+Kelly Johnson,303,47,68,20,3,8,32
+Yunel Escobar,528,89,158,26,2,14,57
+Chipper Jones,488,80,129,23,2,18,101
+Garret Anderson,496,52,133,27,0,13,27
+Nate McLouth,339,59,87,20,1,11,47
+Jeff Francoeur,304,32,76,12,2,5,12
+Javier Vazquez,68,6,12,3,0,0,3
+Jair Jurrjens,65,7,8,2,0,0,8
+Derek Lowe,54,6,12,0,0,0,4
+Kenshin Kawakami,41,0,4,0,0,0,3
+Tommy Hanson,37,2,2,0,0,0,1
+
+
+Type:Pitcher
+Header:Name,IP,H,ER,HR,BB,K,BF
+Javier Vazquez,219.1,181,70,20,44,238,874
+Jair Jurrjens,215.0,186,62,15,75,152,884
+Derek Lowe,194.2,232,101,16,63,111,855
+Kenshin Kawakami,156.1,153,67,15,57,105,669
+Tommy Hanson,127.2,105,41,10,46,116,522

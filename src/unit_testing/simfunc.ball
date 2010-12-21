@@ -1,0 +1,26 @@
+/* This is the first comment */
+/*** This is the second comment ***/
+// This is the third comment */
+
+function myfun ( number p ) returns number :
+	return 10;
+end
+
+function myfun2 ( number p ) returns nothing :
+
+end
+
+team Dodgers = load("dodgers.team"), Astros = load("astros.team");
+
+simfunction mySimFunction is:
+	print Dodgers;
+	return team1;
+end
+
+activate mySimFunction;
+
+print myfun(33);
+
+sim(Dodgers, Astros, 2); // should still print Dodgers twice
+
+print 5;

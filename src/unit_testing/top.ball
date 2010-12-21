@@ -1,0 +1,9 @@
+team Dodgers = load("dodgers.team");
+print Dodgers;
+
+print topPlayers(5, Dodgers's BATTERS, AB);
+print topPlayers(3, Dodgers's BATTERS, 3B);
+
+stat AVG = H/AB;
+
+print topPlayers(3, Dodgers's BATTERS, AVG);

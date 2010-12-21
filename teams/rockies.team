@@ -1,0 +1,27 @@
+Team Name: Colorado Rockies
+Header:W,L
+92,70
+
+Type:Batter
+Header:Name,AB,R,H,2B,3B,HR,BB
+Chris Iannetta,289,41,66,15,2,16,43
+Todd Helton,544,79,177,38,3,15,89
+Clint Barmes,550,69,135,32,3,23,31
+Troy Tulowitzki,543,101,161,25,9,32,73
+Ian Stewart,425,74,97,19,3,25,56
+Seth Smith,335,61,98,20,4,15,46
+Dexter Fowler,433,73,115,29,10,4,67
+Brad Hawpe,501,82,143,42,3,23,79
+Garrett Atkins,354,37,80,12,1,9,41
+Ryan Spilborghs,352,55,85,24,3,8,34
+Carlos Gonzalez*,278,53,79,14,7,13,28
+Yorvit Torrealba,213,27,62,11,1,2,21
+Omar Quintanilla*,58,7,10,2,0,0,8
+
+Type:Pitcher 
+Header:Name,IP,H,ER,HR,BB,K,BF
+Ubaldo Jimenez,218.0,183,87,84,13,85,198,914
+Jason Marquis,216.0,218,104,97,15,80,115,921
+Jorge de la Rosa,185.0,172,95,90,20,83,193,799
+Jason Hammel,176.2,203,94,85,17,42,133,771
+Aaron Cook,158.0,175,76,73,19,47,78,675

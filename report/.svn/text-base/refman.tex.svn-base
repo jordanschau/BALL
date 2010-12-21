@@ -1,0 +1,57 @@
+
+%%%%%%%%%%
+% Lang Ref Man
+%%%%%%%%%%
+\chapter{Language Reference Manual}\label{refman}
+
+\section{Preamble}
+Herein is the language reference manual for the BALL programming
+language. As a language, BALL is designed for user simplicity and ease
+of programming. Thus, users can create simulations and manipulate
+statistics with ease by using the constructs presented below.
+
+\subsection{Purpose of the Language}
+The main purpose of BALL is to allow users to easily construct
+simulations of baseball games. BALL defines language constructs that
+help the user acheive this goal this goal. The design of the BALL
+language also has in mind other related objectives, such as allowing
+statistical data to be easily viewed and compared. To do this, BALL
+encapsulates many low-level tasks that are present in more general
+programming languages.
+
+\subsection{BALL Compilation Process}\label{ref_compile}
+BALL is a compiled language. Each BALL program comes from a single
+source file. Source code is stored in files ending with the
+\texttt{.ball} extension (for example: \texttt{hello.ball}), and is
+provided to the BALL compiler. Valid BALL source files must end with a
+newline. The compiler will then automatically generate the low-level
+code that is syntactically equivalent to the original source and
+execute it. Our reference implementation of a BALL compiler uses Java
+as a target language.
+
+BALL is an imperative programming language. It is similar in structure
+to Java, though numerous changes and innovations have been made to
+help the user quickly learn and create BALL programs. This reference
+manual will explain each feature of BALL from the simplest, atomic
+components upwards while specifying the requirements a BALL compiler
+must fulfill with respect to each language construct.
+
+\input{refman/data.tex}
+
+\pagebreak
+\input{refman/lexical.tex}
+
+\input{refman/expr.tex}
+
+\input{refman/stmt.tex}
+
+\input{refman/builtin.tex}
+
+\input{refman/csv_spec.tex}
+
+\pagebreak
+
+\section{Complete Grammar}\label{grammar}
+
+\codelisting{FullGrammar}{Full Grammar}{../docs/ball_full.y}
+

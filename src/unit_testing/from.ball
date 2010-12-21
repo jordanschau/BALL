@@ -1,0 +1,25 @@
+list of number x = [ 3, 4, 5, 6, 7, 8, 9, 10 ];
+list of string y = [ "a", "b", "c" ];
+list of list of string zeta = [["schau","jordan"], y, y];
+list of list of number z = [ [ 3, 4, 5 ], [ 6, 7 ], [ 8 ] ];
+
+team dod1 = load("dodgers.team");
+team dod2 = load("dodgers.team");
+team dod3 = load("dodgers.team");
+team dod4 = load("dodgers.team");
+team ast1 = load("astros.team");
+
+list of team lotsadodgers = [ dod1, dod2, dod3, ast1, dod1, ast1 ];
+
+print "a" from y; // "a"
+print "x" from y; // null
+print y from zeta;	  // [ "a", "b", "c" ]
+print 3 from x; // 3
+print "Hello " + lotsadodgers; //messy but prints all dodgers and astros
+
+print x where (item > 6); // [7.0, 8.0, 9.0, 10.0]
+print 3 from x where (item > 6); // 0
+
+print any x where (item > 6); // null
+print any lotsadodgers; // any
+

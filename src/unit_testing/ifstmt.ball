@@ -1,0 +1,13 @@
+function f (number p) returns number:
+	return p++;
+end
+
+if(2<f(0))then:
+	list of number l = [1, 2, 3, 4, 5];
+	print any l where (item > 2);
+else:
+	print load("astros.team");
+	list of number l = [6, 7, 8, 9, 10];
+	print any l where (item < 9 or item is 10) / 100;
+end
+

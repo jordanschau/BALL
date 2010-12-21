@@ -1,0 +1,27 @@
+/*
+ * OUTPUT
+ * ------
+ * hello
+ * 3
+ * 3
+ * 10
+ * 5
+ */
+
+string hello = "hello";
+number num = 3;
+
+function printNum ( number pq ) returns nothing :
+	print pq;
+end
+
+function myfun ( number p, number q, string k ) returns number :
+	print k;	//prints hello
+	print p;	//prints 3
+	printNum (p); // this is allowed in BALL - another 3
+	return 10;
+end
+
+print myfun(num, num, hello);	//prints 10
+
+print 5;

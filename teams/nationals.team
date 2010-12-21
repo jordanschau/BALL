@@ -1,0 +1,31 @@
+Team Name:Washington Nationals
+Header:W,L
+59,103
+
+Type:Batter
+Header:Name,AB,R,H,2B,3B,HR,BB
+Josh Bard,274,20,63,18,0,6,24
+Nick Johnson,353,47,104,16,2,6,63
+Anderson Hernandez,231,25,58,9,2,1,20
+Cristian Guzman,531,74,151,24,7,6,16
+Ryan Zimmerman,610,110,178,37,3,33,72
+Josh Willingham,427,70,111,29,0,24,61
+Willie Harris,323,47,76,18,6,7,57
+Elijah Dukes,364,38,91,20,4,8,46
+John Lannan,58,1,9,1,0,0,2
+Craig Stammen,31,1,6,3,0,0,2
+Jordan Zimmermann,27,1,4,0,0,0,1
+J.D. Martin,25,3,4,0,0,0,1
+Shairon Martis,24,4,5,1,0,0,0
+Garrett Mock,23,1,2,0,0,0,0
+
+Type:Pitcher
+Header:Name,IP,H,ER,HR,BB,K,BF
+John Lannan,206.1,210,89,22,68,89,875
+Craig Stammen,105.2,112,60,14,24,48,448
+Jordan Zimmermann,91.1,95,47,10,29,92,391
+Garrett Mock,91.1,114,57,9,44,72,422
+Shairon Martis,85.2,83,50,11,39,34,377
+J.D. Martin,77.0,85,38,14,24,37,341
+
+

@@ -1,0 +1,479 @@
+\begin{center}
+\tablefirsthead{%
+  \hline
+  {\bf Revision} & {\bf Committer} & {\bf Date} \\
+  \hline
+}
+\tablehead{%
+  \hline
+  \multicolumn{3}{|l|}{\footnotesize\sl continued from previous page}\\
+  \hline
+}
+\tabletail{%
+  \hline
+  \multicolumn{3}{|r|}{\footnotesize\sl continued on next page}\\
+  \hline}
+\tablelasttail{\hline}
+\bottomcaption{SVN commit log}
+
+\small
+
+\begin{supertabular}{|c|c|c|}
+
+r540 & daniellasry & 2009-12-20 04:58:48 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{cleaned up unit testing} \\
+\hline
+r539 & jordan.schau & 2009-12-20 04:43:57 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{its late and i forgot 2 ;'s.  its late} \\
+\hline
+r538 & jordan.schau & 2009-12-20 04:43:18 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{regression test = done.  all hundo lines or so} \\
+\hline
+r537 & daniellasry & 2009-12-20 04:42:22 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{TO CHECK FOR NULL TYPE} \\
+\multicolumn{3}{|p{6in}|}{-Use the function isValid() :)} \\
+\hline
+r536 & jordan.schau & 2009-12-20 04:32:30 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{DONT FORGET THE END!!!! ALWAYS CHECK FOR THE END!!!!!!!!   } \\
+\multicolumn{3}{|p{6in}|}{cue "The End" by the doors.  Seems appropriate eh?} \\
+\hline
+r535 & jordan.schau & 2009-12-20 04:15:20 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{broken test!  (as it should!)} \\
+\hline
+r534 & daniellasry & 2009-12-20 03:30:12 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Fixed initializing empty lists} \\
+\hline
+r533 & jordan.schau & 2009-12-20 03:29:05 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Testing suite and bug fixes} \\
+\hline
+r532 & daniellasry & 2009-12-20 02:03:37 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{More error reporting} \\
+\hline
+r531 & daniellasry & 2009-12-20 01:41:48 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Committing latest changes in error reporting} \\
+\hline
+r530 & jordan.schau & 2009-12-20 01:24:49 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Commitment.} \\
+\hline
+r529 & jordan.schau & 2009-12-20 01:24:37 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Almost done with unit testing.  fiiiiinally} \\
+\hline
+r528 & jordan.schau & 2009-12-20 01:14:25 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Captains Log - Day 43} \\
+\multicolumn{3}{|p{6in}|}{Unit testing has been completed} \\
+\multicolumn{3}{|p{6in}|}{The water is running out and the men have scurvy.} \\
+\multicolumn{3}{|p{6in}|}{Yet, I am not too worried.  } \\
+\multicolumn{3}{|p{6in}|}{Game on.} \\
+\hline
+r527 & jordan.schau & 2009-12-20 01:05:44 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{more tests complete- stay tuned for more} \\
+\hline
+r526 & jordan.schau & 2009-12-20 00:46:59 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Test complete.~} \\
+\hline
+r525 & jordan.schau & 2009-12-20 00:39:12 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{TEST COMPLETE! (ROBOT VOICE)} \\
+\hline
+r524 & jordan.schau & 2009-12-20 00:29:30 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Testing - SQUASHED BUG THAT WAS TEAMNAME = DEATH!  (NOT KIDDING)} \\
+\hline
+r523 & slee82 & 2009-12-20 00:22:07 -0500 (Sun, 20 Dec 2009) \\
+\hline
+r522 & nathanmayermiller & 2009-12-20 00:08:09 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added four tester teams: Amazin' Mavens, Awful Waffles, Hittin' Kittens, Pitchin' ****s} \\
+\hline
+r521 & slee82 & 2009-12-20 00:03:30 -0500 (Sun, 20 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{BALL shell script rev2} \\
+\hline
+r520 & nathanmayermiller & 2009-12-19 23:50:15 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Fixed Astros, added Cards and Cubs} \\
+\hline
+r519 & jordan.schau & 2009-12-19 23:45:08 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{American League EAST~~ BOOM BOOM } \\
+\hline
+r518 & jordan.schau & 2009-12-19 23:39:09 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{OOOOOOH CAAAAAAA~~NAAAAA~~DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!!!} \\
+\hline
+r517 & jordan.schau & 2009-12-19 23:35:56 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{rays (not the devil rays)} \\
+\hline
+r516 & jordan.schau & 2009-12-19 23:33:07 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{red sox (socks?)} \\
+\hline
+r515 & slee82 & 2009-12-19 23:31:40 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{BALL sh script... rev1 takes cmd line argument the .ball source file} \\
+\hline
+r514 & jordan.schau & 2009-12-19 23:29:55 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{yankees \#1  (if you dont count the dodgers!)} \\
+\hline
+r513 & slee82 & 2009-12-19 23:22:29 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{updated ball.lex \& ball.y, removed system.err messages}\\
+\hline
+r512 & jordan.schau & 2009-12-19 23:21:28 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{dbacks hello!} \\
+\hline
+r511 & jordan.schau & 2009-12-19 23:17:01 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{padres - vamos los doyers!} \\
+\hline
+r510 & nathanmayermiller & 2009-12-19 23:15:42 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added: Braves, Marlins, Mets, Nats, Phils. BOOM. NL EAST COMPLETE.} \\
+\hline
+r509 & jordan.schau & 2009-12-19 23:10:55 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{adding giants - more teams MORE FUN!} \\
+\hline
+r508 & daniellasry & 2009-12-19 23:04:34 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{EVERYTHING FINALLY WORKS} \\
+\hline
+r507 & ciphwn & 2009-12-19 22:43:14 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{simnectar working (hopefully)} \\
+\hline
+r505 & ciphwn & 2009-12-19 22:15:11 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{working simnectar} \\
+\hline
+r502 & daniellasry & 2009-12-19 21:48:48 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Correct simNectar} \\
+\hline
+r501 & daniellasry & 2009-12-19 21:25:29 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{MERGING TO TRUNK! committing :} \\
+\multicolumn{3}{|p{6in}|}{- HAPPY EASTER} \\
+\multicolumn{3}{|p{6in}|}{- error reporting} \\
+\hline
+r499 & nathanmayermiller & 2009-12-19 19:57:26 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Changed team files.} \\
+\hline
+r498 & nathanmayermiller & 2009-12-19 19:52:57 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added HR stat to pitchers. NOICE.} \\
+\hline
+r497 & ciphwn & 2009-12-19 19:47:51 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{1. Iteration stmt counting uses auto-generated ID} \\
+\multicolumn{3}{|p{6in}|}{2. added bottom... functions} \\
+\multicolumn{3}{|p{6in}|}{3. statlist getting returns list of PlayerObj not list of Object} \\
+\hline
+r496 & nathanmayermiller & 2009-12-19 19:25:13 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Fixed ApostrExpr for teamname attribute.} \\
+\hline
+r494 & nathanmayermiller & 2009-12-19 19:17:28 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added teamname attribute.} \\
+\hline
+r493 & ciphwn & 2009-12-19 19:09:49 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{comitting simNectar.ball, compiles in BALL but javac fails} \\
+\hline
+r492 & ciphwn & 2009-12-19 18:52:40 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{fixed foreach so identifier doesn't have to be declared, but unique} \\
+\hline
+r491 & ciphwn & 2009-12-19 18:31:26 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{1. Adding Sam's loop statements code} \\
+\multicolumn{3}{|p{6in}|}{2. "self" -> "item"} \\
+\hline
+r490 & ciphwn & 2009-12-19 18:12:39 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{1. fixed negative numbers with unary minus} \\
+\multicolumn{3}{|p{6in}|}{2. prevented deletion of files with '-k' in Run.java} \\
+\hline
+r483 & ciphwn & 2009-12-19 17:36:13 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{deleting the useless 'testing' package.} \\
+\hline
+r482 & ciphwn & 2009-12-19 17:29:13 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Implemented topPlayers, topTeams} \\
+\hline
+r477 & slee82 & 2009-12-19 15:08:34 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{merged if stmts and loop stmts} \\
+\hline
+r476 & ciphwn & 2009-12-19 14:49:50 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{added builtins for top, etc} \\
+\hline
+r475 & slee82 & 2009-12-19 14:41:14 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{s.ball} \\
+\hline
+r474 & nathanmayermiller & 2009-12-19 13:00:31 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Fixed fixFloat} \\
+\hline
+r473 & nathanmayermiller & 2009-12-19 12:33:55 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added BF to Program.java. Chicka Chicka Boom Boom - UNN} \\
+\hline
+r472 & slee82 & 2009-12-19 12:33:01 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{fixFloat to PrintStmt.java} \\
+\hline
+r471 & slee82 & 2009-12-19 12:31:53 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{fixFloat to string concats in ArithmeticExpr.java} \\
+\hline
+r470 & nathanmayermiller & 2009-12-19 12:31:39 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Fixed PlayerObj BF assignment/constructor problem. -UNN} \\
+\hline
+r469 & nathanmayermiller & 2009-12-19 12:30:13 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Fixed parenthesis.} \\
+\hline
+r468 & slee82 & 2009-12-19 12:29:03 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{added fixFloat to Tools.java} \\
+\hline
+r467 & nathanmayermiller & 2009-12-19 12:28:07 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Team files updated to add BF stat. BOOYAKASHA} \\
+\hline
+r466 & slee82 & 2009-12-19 12:28:04 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{added BF to Loader.java} \\
+\hline
+r465 & nathanmayermiller & 2009-12-19 12:22:16 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Batters faced tester.} \\
+\hline
+r464 & slee82 & 2009-12-19 12:17:41 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{added BF to pitchers in Loader.java } \\
+\hline
+r463 & nathanmayermiller & 2009-12-19 12:15:23 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Fixed Program.java to have 2B and 3B instead of DBL and TPL.} \\
+\hline
+r462 & nathanmayermiller & 2009-12-19 12:13:06 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Semi-colon error. OOP! Goofy me!} \\
+\hline
+r461 & nathanmayermiller & 2009-12-19 12:10:34 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added BF methods/attribute to PlayerObj.} \\
+\hline
+r458 & daniellasry & 2009-12-19 01:52:21 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{IMPORVED ERROR REPORTING!} \\
+\multicolumn{3}{|p{6in}|}{- The parser now tells you the line number and the last matched token!} \\
+\multicolumn{3}{|p{6in}|}{- type 'prit "hello"' and see for yourselves} \\
+\hline
+r457 & daniellasry & 2009-12-19 00:34:25 -0500 (Sat, 19 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{MERGED!} \\
+\hline
+r429 & jordan.schau & 2009-12-16 21:08:34 -0500 (Wed, 16 Dec 2009) \\
+\hline
+r423 & ciphwn & 2009-12-16 05:02:13 -0500 (Wed, 16 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Merging nathan\_1 to trunk.} \\
+\multicolumn{3}{|p{6in}|}{changes: 's working} \\
+\hline
+r414 & ciphwn & 2009-12-15 17:14:36 -0500 (Tue, 15 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{1. fixed auto-runner to delete children class files} \\
+\multicolumn{3}{|p{6in}|}{2. stat semicolon/access problem fixd} \\
+\hline
+r412 & ciphwn & 2009-12-15 14:17:16 -0500 (Tue, 15 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added auto compiler/runner. needs tools.jar.} \\
+\hline
+r410 & ciphwn & 2009-12-15 04:27:01 -0500 (Tue, 15 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Merged cipta\_7 to trunk.} \\
+\multicolumn{3}{|p{6in}|}{1. Style sheet} \\
+\multicolumn{3}{|p{6in}|}{2. 'any' and 'from'} \\
+\multicolumn{3}{|p{6in}|}{3. Tools.java where random, top is probably going to be put} \\
+\hline
+r402 & ciphwn & 2009-12-14 18:59:27 -0500 (Mon, 14 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{COMMITING CIPTA\_6 TO TRUNK} \\
+\multicolumn{3}{|p{6in}|}{CHANGES} \\
+\multicolumn{3}{|p{6in}|}{1. 'where' is working. To get 'where' working expressions can now insert statements before the statement it currently lives in to pre-evaluate stuff (this makes writing loops tricky, but doable)} \\
+\multicolumn{3}{|p{6in}|}{2. Symbol table makes random tokens differently now. Everything starts with "tok\_" and a random  hex number.} \\
+\multicolumn{3}{|p{6in}|}{3. statements must check whether they have accumulated any inserts because of the expressions inside them. This is done in the "Stmt" base class. Subclasses need not worry but they must implement the "stmtCode" function instead of "code" now.} \\
+\hline
+r388 & jordan.schau & 2009-12-12 21:19:44 -0500 (Sat, 12 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{updated to include the bool in Type.java and LogicalExpr.java (but shhh bools are a secret to the end user)} \\
+\hline
+r387 & ciphwn & 2009-12-12 20:15:00 -0500 (Sat, 12 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{merged changes from cipta\_6 to trunk} \\
+\hline
+r382 & ciphwn & 2009-12-12 16:43:47 -0500 (Sat, 12 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Merge list lintializer to trunk} \\
+\hline
+r379 & jordan.schau & 2009-12-12 16:31:25 -0500 (Sat, 12 Dec 2009) \\
+\hline
+r378 & jordan.schau & 2009-12-12 15:45:45 -0500 (Sat, 12 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{arithmetic expressions are working - butter} \\
+\hline
+r366 & ciphwn & 2009-12-12 13:52:05 -0500 (Sat, 12 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{myfun2 syntax error} \\
+\hline
+r364 & nathanmayermiller & 2009-12-12 13:48:38 -0500 (Sat, 12 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{PlayerStat methods; changed double ip to float ip.} \\
+\hline
+r363 & ciphwn & 2009-12-12 13:45:13 -0500 (Sat, 12 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{added '()'} \\
+\hline
+r362 & nathanmayermiller & 2009-12-12 13:41:10 -0500 (Sat, 12 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added TeamStat methods} \\
+\hline
+r361 & ciphwn & 2009-12-12 13:30:42 -0500 (Sat, 12 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{- merged stats with simfunction} \\
+\multicolumn{3}{|p{6in}|}{- added smart code indenting} \\
+\multicolumn{3}{|p{6in}|}{- a few builtin stats} \\
+\multicolumn{3}{|p{6in}|}{- original expr => AtomicExpr} \\
+\hline
+r355 & daniellasry & 2009-12-10 18:03:32 -0500 (Thu, 10 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Committed my branch to the trunk. Check out simfunc.ball} \\
+\hline
+r341 & daniellasry & 2009-12-09 20:13:06 -0500 (Wed, 09 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Tested sim() a little more, going to brach off soon and implement activation statements.} \\
+\hline
+r340 & daniellasry & 2009-12-09 19:45:23 -0500 (Wed, 09 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{sim() working} \\
+\hline
+r339 & daniellasry & 2009-12-09 19:05:23 -0500 (Wed, 09 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Modified javabackend: added a sim function, fixed IP in playerObj} \\
+\hline
+r330 & ciphwn & 2009-12-09 17:12:07 -0500 (Wed, 09 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{1. Fixed shift/reduce conflict because of empty function body} \\
+\multicolumn{3}{|p{6in}|}{2. Added special declaration for functions with empty bodies} \\
+\hline
+r329 & daniellasry & 2009-12-09 17:08:46 -0500 (Wed, 09 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{added regexp decimal numbers} \\
+\hline
+r327 & daniellasry & 2009-12-09 15:45:16 -0500 (Wed, 09 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Working on the'sim()' function} \\
+\hline
+r323 & daniellasry & 2009-12-09 05:56:11 -0500 (Wed, 09 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Removing presentations to save space (it adds up every time we branch) I will add it to the downloads.} \\
+\hline
+r322 & daniellasry & 2009-12-09 05:52:18 -0500 (Wed, 09 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Going to bed: MERGING WITH TRUNK} \\
+\hline
+r318 & ciphwn & 2009-12-09 02:31:11 -0500 (Wed, 09 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Functions and variable declarations now completely follow how the ball source is declared. That is, this is illegal:} \\
+\multicolumn{3}{|p{6in}|}{function x() returns nothing:} \\
+\multicolumn{3}{|p{6in}|}{	y();} \\
+\multicolumn{3}{|p{6in}|}{end} \\
+\multicolumn{3}{|p{6in}|}{function y() returns nothing:} \\
+\multicolumn{3}{|p{6in}|}{end} \\
+\multicolumn{3}{|p{6in}|}{because x doesn't know of y yet.} \\
+\hline
+r317 & ciphwn & 2009-12-09 01:56:19 -0500 (Wed, 09 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Commiting changes from cipta\_3 branch to main trunk.} \\
+\multicolumn{3}{|p{6in}|}{1. Function definition basics working} \\
+\multicolumn{3}{|p{6in}|}{2. Variable declarations, both in the top level and inside function blocks, work. Top level variables gets pushed outside the class, vars inside functions stay inside.} \\
+\multicolumn{3}{|p{6in}|}{3. Assignment basics work. Variables can now be redefined.} \\
+\multicolumn{3}{|p{6in}|}{4. Type checking basics. Since there are only a handful of types this isn't hard to do.} \\
+\hline
+r304 & daniellasry & 2009-12-07 15:30:20 -0500 (Mon, 07 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Fixed something} \\
+\hline
+r303 & daniellasry & 2009-12-07 15:28:08 -0500 (Mon, 07 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Variable declarations now happen outside 'main' (on top of main).} \\
+\hline
+r299 & daniellasry & 2009-12-07 13:27:20 -0500 (Mon, 07 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{commited pres} \\
+\hline
+r298 & daniellasry & 2009-12-05 20:40:23 -0500 (Sat, 05 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Updated presentation} \\
+\hline
+r297 & daniellasry & 2009-12-05 17:28:05 -0500 (Sat, 05 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{updated presentation} \\
+\hline
+r296 & nathanmayermiller & 2009-12-05 15:39:10 -0500 (Sat, 05 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added comments to play.ball to test it.} \\
+\hline
+r295 & nathanmayermiller & 2009-12-05 12:57:41 -0500 (Sat, 05 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Fixed IP values (.1,.2) for playerObj} \\
+\hline
+r294 & daniellasry & 2009-12-05 12:22:47 -0500 (Sat, 05 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added The presentation} \\
+\hline
+r293 & daniellasry & 2009-12-04 17:15:05 -0500 (Fri, 04 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added support for integers. I can't get the regexp for decimals to work yet.} \\
+\hline
+r292 & jordan.schau & 2009-12-04 11:20:06 -0500 (Fri, 04 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{adding Daniels load application from the email he sent out to test it (as the tester and validator - because thats my job)} \\
+\hline
+r291 & daniellasry & 2009-12-04 04:30:42 -0500 (Fri, 04 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Goign to add support for numbers tomorrow} \\
+\hline
+r290 & daniellasry & 2009-12-04 04:02:36 -0500 (Fri, 04 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{In this revision, play.ball reads two teams and prints them!!!!} \\
+\hline
+r289 & daniellasry & 2009-12-04 02:29:22 -0500 (Fri, 04 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{cleaned up more} \\
+\hline
+r288 & daniellasry & 2009-12-04 02:26:30 -0500 (Fri, 04 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{cleaned junk} \\
+\hline
+r287 & daniellasry & 2009-12-04 02:24:16 -0500 (Fri, 04 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Merged my branch into trunk} \\
+\hline
+r283 & daniellasry & 2009-12-03 15:11:33 -0500 (Thu, 03 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added the Loader class. Worth a look. Returns a team. Handles a lot of errors.} \\
+\hline
+r281 & jordan.schau & 2009-12-03 14:22:07 -0500 (Thu, 03 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{trivial comment change to test eclipse commit } \\
+\hline
+r280 & jordan.schau & 2009-12-03 13:59:13 -0500 (Thu, 03 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{updated astros and dodgers to match the data on baseball-reference.  removed the .txt file extension} \\
+\hline
+r279 & jordan.schau & 2009-12-03 13:30:09 -0500 (Thu, 03 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added ref man and tut.  moved to docs folder.} \\
+\multicolumn{3}{|p{6in}|}{xo} \\
+\hline
+r278 & daniellasry & 2009-12-03 08:03:58 -0500 (Thu, 03 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Realized that Innings Pitches are actually decimal numbers, not ints. Reverted to the old CSVs and modified the player class to accept doubles for innings pitched.} \\
+\hline
+r277 & daniellasry & 2009-12-03 07:55:49 -0500 (Thu, 03 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Added toString methods to the teams and Players. The load function works, commenting it.} \\
+\hline
+r276 & daniellasry & 2009-12-03 07:07:18 -0500 (Thu, 03 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Fixed the constants in playerObj to be public final static int (so they can be accessed and yet not modified).} \\
+\multicolumn{3}{|p{6in}|}{Removed some random decimal values in the innings pitched (???).} \\
+\hline
+r275 & daniellasry & 2009-12-03 02:28:05 -0500 (Thu, 03 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Removed unnecessary "Team Stats" header which made parsing difficult. Fixed Expr and PrintStmt so that the java print statement appears on one line.} \\
+\hline
+r274 & slee82 & 2009-12-02 21:33:12 -0500 (Wed, 02 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{Holler at cha boy. What up. TeamObj and playerObj are done. Uppercase Team, Lowercase player. SORRY, I messed up.} \\
+\hline
+r273 & jordan.schau & 2009-12-02 21:12:14 -0500 (Wed, 02 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{added teams!} \\
+\hline
+r272 & ciphwn & 2009-12-02 20:49:11 -0500 (Wed, 02 Dec 2009) \\
+\multicolumn{3}{|p{6in}|}{adding next target program} \\
+\hline
+r271 & ciphwn & 2009-11-27 00:32:41 -0500 (Fri, 27 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{\_\_Integrating changes from the cipta\_1 branch\_\_} \\
+\multicolumn{3}{|p{6in}|}{1. Can print a hello world program to stdout (redirect stdout to a file to get the java program)} \\
+\multicolumn{3}{|p{6in}|}{2. Uses packages} \\
+\multicolumn{3}{|p{6in}|}{3. Uses an Ant build file} \\
+\hline
+r260 & ciphwn & 2009-11-23 14:01:01 -0500 (Mon, 23 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{Merging changes from branch to trunk.} \\
+\multicolumn{3}{|p{6in}|}{- added more comments} \\
+\multicolumn{3}{|p{6in}|}{- added header} \\
+\multicolumn{3}{|p{6in}|}{- added declaration for a symbol table, though not implemented yet} \\
+\hline
+r247 & jordan.schau & 2009-11-18 22:17:38 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{Deleting yacc.macosx} \\
+\hline
+r246 & jordan.schau & 2009-11-18 21:50:45 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{removing versions} \\
+\hline
+r245 & ciphwn & 2009-11-18 21:14:04 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{Removed 'y.tab.c'} \\
+\multicolumn{3}{|p{6in}|}{added test program.} \\
+\hline
+r244 & ciphwn & 2009-11-18 21:11:03 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{- Adding clean target} \\
+\multicolumn{3}{|p{6in}|}{- changed "ball\_simple.y" to just "ball.y"} \\
+\hline
+r243 & jordan.schau & 2009-11-18 21:07:18 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{removing junk} \\
+\hline
+r242 & ciphwn & 2009-11-18 21:06:06 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{First working lex and yacc file} \\
+\multicolumn{3}{|p{6in}|}{- no syntax directed translation yet} \\
+\multicolumn{3}{|p{6in}|}{- successfully detected the "print" keyword} \\
+\multicolumn{3}{|p{6in}|}{- successfully parsed the "playball!" string} \\
+\hline
+r241 & jordan.schau & 2009-11-18 21:04:19 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{removing my test junk} \\
+\hline
+r240 & jordan.schau & 2009-11-18 21:03:45 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{test} \\
+\hline
+r239 & ciphwn & 2009-11-18 20:58:23 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{adding a makefile} \\
+\hline
+r238 & jordan.schau & 2009-11-18 20:58:21 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{added secrets.  SH!!!!} \\
+\hline
+r237 & jordan.schau & 2009-11-18 20:55:04 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{added whitepaper...  fingers crossed} \\
+\hline
+r236 & slee82 & 2009-11-18 20:41:13 -0500 (Wed, 18 Nov 2009) \\
+\multicolumn{3}{|p{6in}|}{test} \\
+\hline
+r1 & (no author) & 2009-10-27 19:14:40 -0400 (Tue, 27 Oct 2009) \\
+\multicolumn{3}{|p{6in}|}{Initial directory structure.} \\
+
+\end{supertabular}
+
+\normalsize
+
+\end{center}

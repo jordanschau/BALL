@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/577/trunk/report/refman
+END
+lexical.tex
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/573/trunk/report/refman/lexical.tex
+END
+csv_spec.tex
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/571/trunk/report/refman/csv_spec.tex
+END
+builtin.tex
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/574/trunk/report/refman/builtin.tex
+END
+stmt.tex
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/574/trunk/report/refman/stmt.tex
+END
+data.tex
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/572/trunk/report/refman/data.tex
+END
+expr.tex
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/577/trunk/report/refman/expr.tex
+END
